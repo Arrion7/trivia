@@ -53,9 +53,9 @@ function getQuestions()
                 
                 var br = document.createElement('br');
                 
+                container.appendChild(quest);
                 container.appendChild(cat);
                 container.appendChild(diff);
-                container.appendChild(quest);
                 container.appendChild(br);
                 
             });
