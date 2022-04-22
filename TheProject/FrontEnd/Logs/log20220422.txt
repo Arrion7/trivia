@@ -1,0 +1,4 @@
+2022-04-22 12:36:04.427 -04:00 [INF] Entity Framework Core 6.0.4 initialized 'Context' using provider 'Npgsql.EntityFrameworkCore.PostgreSQL:6.0.4+6cb649128e3e7aa8eddd77dfa75b34bad51e6e94' with options: None
+2022-04-22 12:38:32.258 -04:00 [INF] Entity Framework Core 6.0.4 initialized 'Context' using provider 'Npgsql.EntityFrameworkCore.PostgreSQL:6.0.4+6cb649128e3e7aa8eddd77dfa75b34bad51e6e94' with options: None
+2022-04-22 12:39:21.370 -04:00 [INF] Entity Framework Core 6.0.4 initialized 'Context' using provider 'Npgsql.EntityFrameworkCore.PostgreSQL:6.0.4+6cb649128e3e7aa8eddd77dfa75b34bad51e6e94' with options: None
+2022-04-22 12:40:28.651 -04:00 [INF] Entity Framework Core 6.0.4 initialized 'Context' using provider 'Npgsql.EntityFrameworkCore.PostgreSQL:6.0.4+6cb649128e3e7aa8eddd77dfa75b34bad51e6e94' with options: None
