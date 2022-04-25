@@ -3680,15 +3680,14 @@
     },
     "ConsoleProjModel/1.0.0": {
       "type": "project",
-      "path": "../ConsoleProjModel/ConsoleProjModel.csproj",
-      "msbuildProject": "../ConsoleProjModel/ConsoleProjModel.csproj"
+      "path": "../Models/ConsoleProjModel.csproj",
+      "msbuildProject": "../Models/ConsoleProjModel.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net6.0": [
       "ConsoleProjBL >= 1.0.0",
       "ConsoleProjDL >= 1.0.0",
-      "ConsoleProjModel >= 1.0.0",
       "Microsoft.EntityFrameworkCore.Design >= 6.0.4",
       "Serilog.AspNetCore >= 5.0.0",
       "Serilog.Sinks.Console >= 4.0.1",
@@ -3732,9 +3731,6 @@
             },
             "G:\\Training\\P2\\TheProject\\FrontEnd\\ConsoleProjDL\\ConsoleProjDL.csproj": {
               "projectPath": "G:\\Training\\P2\\TheProject\\FrontEnd\\ConsoleProjDL\\ConsoleProjDL.csproj"
-            },
-            "G:\\Training\\P2\\TheProject\\FrontEnd\\ConsoleProjModel\\ConsoleProjModel.csproj": {
-              "projectPath": "G:\\Training\\P2\\TheProject\\FrontEnd\\ConsoleProjModel\\ConsoleProjModel.csproj"
             }
           }
         }

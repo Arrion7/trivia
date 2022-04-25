@@ -34,3 +34,15 @@ G:\Training\P2\TheProject\FrontEnd\ConsoleProjModel\obj\Debug\net6.0\ConsoleProj
 G:\Training\P2\TheProject\FrontEnd\ConsoleProjModel\obj\Debug\net6.0\refint\ConsoleProjModel.dll
 G:\Training\P2\TheProject\FrontEnd\ConsoleProjModel\obj\Debug\net6.0\ConsoleProjModel.pdb
 G:\Training\P2\TheProject\FrontEnd\ConsoleProjModel\obj\Debug\net6.0\ref\ConsoleProjModel.dll
+G:\Training\P2\TheProject\FrontEnd\Models\obj\Debug\net6.0\ConsoleProjModel.csproj.AssemblyReference.cache
+G:\Training\P2\TheProject\FrontEnd\Models\obj\Debug\net6.0\ConsoleProjModel.GeneratedMSBuildEditorConfig.editorconfig
+G:\Training\P2\TheProject\FrontEnd\Models\obj\Debug\net6.0\ConsoleProjModel.AssemblyInfoInputs.cache
+G:\Training\P2\TheProject\FrontEnd\Models\obj\Debug\net6.0\ConsoleProjModel.AssemblyInfo.cs
+G:\Training\P2\TheProject\FrontEnd\Models\obj\Debug\net6.0\ConsoleProjModel.csproj.CoreCompileInputs.cache
+G:\Training\P2\TheProject\FrontEnd\Models\obj\Debug\net6.0\ConsoleProjModel.dll
+G:\Training\P2\TheProject\FrontEnd\Models\obj\Debug\net6.0\refint\ConsoleProjModel.dll
+G:\Training\P2\TheProject\FrontEnd\Models\obj\Debug\net6.0\ConsoleProjModel.pdb
+G:\Training\P2\TheProject\FrontEnd\Models\bin\Debug\net6.0\ConsoleProjModel.deps.json
+G:\Training\P2\TheProject\FrontEnd\Models\bin\Debug\net6.0\ConsoleProjModel.dll
+G:\Training\P2\TheProject\FrontEnd\Models\bin\Debug\net6.0\ConsoleProjModel.pdb
+G:\Training\P2\TheProject\FrontEnd\Models\obj\Debug\net6.0\ref\ConsoleProjModel.dll

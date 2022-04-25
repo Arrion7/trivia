@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
 <ItemGroup>
-<ProjectReference Include="..\ConsoleProjModel\ConsoleProjModel.csproj" />
+<ProjectReference Include="..\Models\ConsoleProjModel.csproj" />
 <ProjectReference Include="..\ConsoleProjDL\ConsoleProjDL.csproj"/>
 </ItemGroup>
 

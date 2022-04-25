@@ -1,3 +1,4 @@
+using JAModel;
 namespace JAConsoleBL;
 
 public interface IJABL
@@ -16,7 +17,8 @@ public interface IJABL
     /// Gets all users from the application, including administrators
     /// </summary>
     /// <returns>Returns a list of users to check if a user currently exists with the same credentials</returns>
-    Task<List<JAModel.UserPass>> GetAllUsersAsync();
+    Task<List<users>> GetAllUsersAsync();
+    List<users> GetAllUsers();
     Task SaveAdminsAsync();
     Task< List<JAModel.ShopItem>> GetFoodInventoryAsync();
     /// <summary>
@@ -41,21 +43,12 @@ public interface IJABL
     Task CreateNewUserAsync(JAModel.UserPass _newUser);
 
     /// <summary>
-    /// Gets all the stores in the database
-    /// </summary>
-    /// <returns>Returns a list of stores</returns>
-    Task<List<JAModel.Store>> GetStoresAsync();
-    /// <summary>
     /// Updates a food item, relating to modifying the quantity of the inventory
     /// </summary>
     /// <param name="_item">The food item that is being modified</param>
     /// <param name="_additionalQuantity">The additional quantity that the admin is restocking with</param>
     Task UpdateFoodItemAsync(JAModel.ShopItem _item);
-    /// <summary>
-    /// Creates a new store in the franchise
-    /// </summary>
-    /// <param name="_newStore"></param>
-    Task CreateNewStoreAsync(JAModel.Store _newStore);
+
     
     /// <summary>
     /// Removes an item from a user's current order
