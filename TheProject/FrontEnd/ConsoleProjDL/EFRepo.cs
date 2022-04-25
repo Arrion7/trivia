@@ -1,5 +1,7 @@
 using System.Linq;
 using Microsoft.EntityFrameworkCore;
+using JAModel;
+
 namespace JAConsoleDL;
 
 public class EFRepo : IRepo
@@ -9,45 +11,138 @@ public class EFRepo : IRepo
     {
         _context = context;
     }
-    
-    Task CreateNewUserAsync(JAModel.UserPass _newUser)
+    public async Task<List<users>> GetAllUsersAsync()
+    {
+        // return await _context.users.ToListAsync();
+        throw new NotImplementedException();
+    }
+
+    public List<users> GetAllUsers()
+    {
+        return _context.users.Select(i => i).ToList();
+    }
+
+    public Task AddOrderItemAsync()
     {
         throw new NotImplementedException();
     }
-    Task CreateNewAdminAsync(JAModel.UserPass _newAdmin);
-    Task<List<JAModel.UserPass>> GetAllAdminsAsync();
-    Task<List<JAModel.UserPass>> GetAllUsersAsync()
-    {
-        return _context.Users.Select(user => user).ToListAsync();
-    }
-    Task SaveAdminsAsync(); 
-    Task<List<JAModel.ShopItem>> GetFoodInventoryAsync();
-    Task CreateNewFoodItemAsync(JAModel.ShopItem _shopItem);
-    Task SaveFoodInventoryAsync();
-    Task <JAModel.ShopItem> SearchInventoryAsync(string itemName, int storeID);
-    Task<List<JAModel.Store>> GetStoresAsync(); 
-    Task UpdateFoodItemAsync(JAModel.ShopItem _item);
-    Task CreateNewStoreAsync(JAModel.Store _newStore);
-    Task ChangePriceAsync(JAModel.ShopItem _item, float _price, int storeID);
-    Task RemoveItemAsync(JAModel.ShopItem _item, int storeID);
-    Task ChangeStoreAsync(int _newID, JAModel.UserPass _currentUser);
-    Task<Dictionary<int, List<JAModel.ShopItem>>> SearchForOrderAsync(int userID);
-    Task AddOrderItemAsync();
-    Task<Dictionary<int, string>> CheckOrderHistoryAsyncAdmin(int _select, int _storeID);
-    Task RemoveOrderAsync();
-    Task ConfirmOrderAsync(Dictionary<int, List<JAModel.ShopItem>> Order);
-    /// <summary>
-/// Checks the order history of the user that is logged in
-/// </summary>
-/// <param name="_select">Sort option for switch case</param>
-/// <param name="_userID">Gets current ID from that is logged in</param>
-/// <returns>Currently returns list of strings that describe orders, but needs to return dictionary</returns>
-    Task<Dictionary<int, string>> CheckOrderHistoryAsync(int _select, int _userID);
-    Task<string> GetStoreNameAsync(int userID);
-    Task SaveOrderAsync(JAModel.OrderInstance _instance);
-    Task CreateOrderAsync(int userID);
-    Task<int> GetCartID(int userID);
-    Task RemoveOrderItemAsync(int _itemID, int _userID);
-    Task<List<JAModel.ShopItem>> GetStoreInventoryAsync(int _storeID);
 
+    public Task ChangePriceAsync(JAModel.ShopItem _item, float _price, int storeID)
+    {
+        throw new NotImplementedException();
+    }
+
+    public Task ChangeStoreAsync(int _newID, JAModel.UserPass _currentUser)
+    {
+        throw new NotImplementedException();
+    }
+
+    public Task<Dictionary<int, string>> CheckOrderHistoryAsync(int _select, int _userID)
+    {
+        throw new NotImplementedException();
+    }
+
+    public Task<Dictionary<int, string>> CheckOrderHistoryAsyncAdmin(int _select, int _storeID)
+    {
+        throw new NotImplementedException();
+    }
+
+    public Task ConfirmOrderAsync(Dictionary<int, List<JAModel.ShopItem>> Order)
+    {
+        throw new NotImplementedException();
+    }
+
+    public Task CreateNewAdminAsync(JAModel.UserPass _newAdmin)
+    {
+        throw new NotImplementedException();
+    }
+
+    public Task CreateNewFoodItemAsync(JAModel.ShopItem _shopItem)
+    {
+        throw new NotImplementedException();
+    }
+
+
+
+    public Task CreateNewUserAsync(JAModel.UserPass _newUser)
+    {
+        throw new NotImplementedException();
+    }
+
+    public Task CreateOrderAsync(int userID)
+    {
+        throw new NotImplementedException();
+    }
+
+    public Task<List<JAModel.UserPass>> GetAllAdminsAsync()
+    {
+        throw new NotImplementedException();
+    }
+
+
+
+    public Task<int> GetCartID(int userID)
+    {
+        throw new NotImplementedException();
+    }
+
+    public Task<List<JAModel.ShopItem>> GetFoodInventoryAsync()
+    {
+        throw new NotImplementedException();
+    }
+
+    public Task<List<JAModel.ShopItem>> GetStoreInventoryAsync(int _storeID)
+    {
+        throw new NotImplementedException();
+    }
+
+    public Task<string> GetStoreNameAsync(int userID)
+    {
+        throw new NotImplementedException();
+    }
+
+    public Task RemoveItemAsync(JAModel.ShopItem _item, int storeID)
+    {
+        throw new NotImplementedException();
+    }
+
+    public Task RemoveOrderAsync()
+    {
+        throw new NotImplementedException();
+    }
+
+    public Task RemoveOrderItemAsync(int _itemID, int _userID)
+    {
+        throw new NotImplementedException();
+    }
+
+    public Task SaveAdminsAsync()
+    {
+        throw new NotImplementedException();
+    }
+
+    public Task SaveFoodInventoryAsync()
+    {
+        throw new NotImplementedException();
+    }
+
+    public Task SaveOrderAsync(JAModel.OrderInstance _instance)
+    {
+        throw new NotImplementedException();
+    }
+
+    public Task<Dictionary<int, List<JAModel.ShopItem>>> SearchForOrderAsync(int userID)
+    {
+        throw new NotImplementedException();
+    }
+
+    public Task<JAModel.ShopItem> SearchInventoryAsync(string itemName, int storeID)
+    {
+        throw new NotImplementedException();
+    }
+
+    public Task UpdateFoodItemAsync(JAModel.ShopItem _item)
+    {
+        throw new NotImplementedException();
+    }
 } 

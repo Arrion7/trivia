@@ -2,6 +2,7 @@ using Microsoft.Data.SqlClient;
 using System.Text.Json;
 using Serilog;
 using System;
+using JAModel;
 namespace JAConsoleDL;
 
 
@@ -49,30 +50,7 @@ public DBRespository(string connectionString)
 _connectionString = connectionString;
 }
 
-public async Task CreateNewStoreAsync(JAModel.Store _newStore)
-{
-    
-SqlConnection connection = new SqlConnection(_connectionString);
-connection.Open();
-SqlCommand cmd = new SqlCommand("INSERT INTO StoreFront(storeName, storeAddress, storeCity, storeState, storeCountry, storeZIP) OUTPUT INSERTED.storeID VALUES (@name, @address, @city, @state, @country, @zip)", connection);
-cmd.Parameters.AddWithValue("@name",_newStore.StoreName);
-cmd.Parameters.AddWithValue("@address", _newStore.StoreAddress);
-cmd.Parameters.AddWithValue("@city", _newStore.StoreCity);
-cmd.Parameters.AddWithValue("@state", _newStore.StoreState);
-cmd.Parameters.AddWithValue("@country", _newStore.StoreCountry);
-cmd.Parameters.AddWithValue("@zip", _newStore.StoreZIP);
 
-try
-{
-    _newStore.storeID = (int)cmd.ExecuteScalar();
-}
-catch(Exception e)
-{
-    
-    Console.WriteLine("Runtime Error. Check ConsoleLog.json for more info"); LogToFile(e);
-}
-
-}
 
 
 
@@ -124,75 +102,58 @@ catch(Exception e)
 //        cmd = new SqlCommand("INSERT INTO ShopItem(productName, productPrice, productQuantity, productType, storeID) OUTPUT INSERTED.productID VALUES(@name, @price, @quantity, @type, @storeid)", connection);
 }
 
-public async Task<List<JAModel.Store>> GetStoresAsync()
+public List<users> GetAllUsers()
 {
-List<JAModel.Store> allStores = new List<JAModel.Store>();
-SqlConnection connection = new SqlConnection(_connectionString);
-connection.Open();
-
-SqlCommand cmd = new SqlCommand("SELECT * FROM StoreFront", connection);
-SqlDataReader reader = cmd.ExecuteReader();
-
-while(reader.Read())
-{
-    int storeID = reader.GetInt32(0);
-    string storeName = reader.GetString(1);
-    string storeAddress = reader.GetString(2);
-    string storeCity = reader.GetString(3);
-    string storeState = reader.GetString(4);
-    string storeCountry = reader.GetString(5);
-    int storeZIP = reader.GetInt32(6);
-
-    JAModel.Store _newStore = new JAModel.Store()
-    {
-        storeID = storeID,
-        StoreName = storeName,
-        StoreAddress = storeAddress,
-        StoreCity = storeCity,
-        StoreState = storeState,
-        StoreCountry = storeCountry,
-        StoreZIP = storeZIP
-    };
-
-    //string Store = $"[{storeID}] - {storeName}";
-    allStores.Add(_newStore);
-}
-connection.Close();
-return allStores;
+    return new List<users>();
 }
 
-public async Task<List<JAModel.UserPass>> GetAllUsersAsync()
+public async Task<List<users>> GetAllUsersAsync()
 {
-//Closed connection
-List<JAModel.UserPass> allUsers = new List<JAModel.UserPass>();
+    // List<Users> test = new List<Users>()
+    // {
+    //     new Users
+    //     {
+    //         Id = 3,
+    //         UserName = "nova_flash",
+    //         PassWord = "password",
+    //         FirstName = "From",
+    //         LastName = "Hard-Code"
+    //     },
+    // };
 
-SqlConnection connection = new SqlConnection(_connectionString);
-connection.Open();
-SqlCommand cmd = new SqlCommand("SELECT * FROM Users;", connection);
-SqlDataReader reader = cmd.ExecuteReader();
-while(reader.Read())
-{
-    int userID = reader.GetInt32(0);
-    string username = reader.GetString(1);
-    string password = reader.GetString(2);
-    int storeID = reader.GetInt32(4);
-    string firstname = reader.GetString(6);
-    string lastname = reader.GetString(5);
 
-    JAModel.UserPass user = new JAModel.UserPass
-    {
-        UserID = userID,
-        UserName = username,
-        PassWord = password,
-        FirstName = firstname,
-        LastName = lastname,
-        StoreID = storeID,
-    };
-    allUsers.Add(user);
-}
-connection.Close();
+
+List<users> allUsers = new List<users>();
+//List<JAModel.UserPass> allUsers = new List<JAModel.UserPass>();
+
+// SqlConnection connection = new SqlConnection(_connectionString);
+// connection.Open();
+// SqlCommand cmd = new SqlCommand("SELECT * FROM Users;", connection);
+// SqlDataReader reader = cmd.ExecuteReader();
+// while(reader.Read())
+// {
+//     int userID = reader.GetInt32(0);
+//     string username = reader.GetString(1);
+//     string password = reader.GetString(2);
+//     int storeID = reader.GetInt32(4);
+//     string firstname = reader.GetString(6);
+//     string lastname = reader.GetString(5);
+
+//     JAModel.UserPass user = new JAModel.UserPass
+//     {
+//         UserID = userID,
+//         UserName = username,
+//         PassWord = password,
+//         FirstName = firstname,
+//         LastName = lastname,
+//         StoreID = storeID,
+//     };
+//     allUsers.Add(user);
+// }
+// connection.Close();
 
 return allUsers;
+    //return test;
 }
 
 public async Task SaveAdminsAsync()

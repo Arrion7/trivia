@@ -3,10 +3,10 @@ namespace JAModel;
 
 public class Session
 {
-    private int SessionID;
-    private int Score;
-    private bool DailyMode = false;
-    private int Streak;
+    private int sessionId;
+    private int score;
+    private bool dailyMode = false;
+    private int streak;
 
     
     public int SessionID 

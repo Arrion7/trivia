@@ -29,28 +29,25 @@ namespace WebAPI.Controllers
             return await _bl.GetFoodInventoryAsync();
         }
         
-        [HttpGet("GetStores")]
-        public async Task<List<Store>> GetStores()
-        {
-            return await _bl.GetStoresAsync();
-        }
+
 
         [HttpPost("CreateFoodItem")]
         public async Task CreateNewFoodItem(ShopItem _item) 
         {
             await _bl.CreateNewFoodItemAsync(_item); 
         }
-        [HttpPost("CreateNewStore")]
-        public async Task CreateNewStoreAsync(Store _store)
-        {
-            await _bl.CreateNewStoreAsync(_store);
-        }
 
         [HttpGet("GetUsers")]
-        public async Task<List<UserPass>> GetAllUsersAsync()
+        // public async Task<List<Users>> GetAllUsersAsync()
+        // {
+        //     return await _bl.GetAllUsersAsync(); 
+        // }
+        public List<users> GetAllUsers()
         {
-            return await _bl.GetAllUsersAsync(); 
+            return _bl.GetAllUsers();
         }
+
+
 
         [HttpGet("GetAdmins")]
         public async Task<List<UserPass>> GetAllAdminsAsync()

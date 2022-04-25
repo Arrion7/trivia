@@ -1,5 +1,6 @@
 using JAModel;
 using JAConsoleDL;
+
 namespace JAConsoleBL;
 
 public class ConsoleProjBL : IJABL 
@@ -46,9 +47,14 @@ public class ConsoleProjBL : IJABL
         return await _repo.GetAllAdminsAsync();
         
     }
-    public async Task<List<UserPass>> GetAllUsersAsync()
+    public async Task<List<users>> GetAllUsersAsync()
     {
         return await _repo.GetAllUsersAsync();
+    }
+
+    public List<users> GetAllUsers()
+    {
+        return _repo.GetAllUsers();
     }
     public async Task SaveAdminsAsync()
     {
@@ -86,14 +92,6 @@ public async Task UpdateFoodItemAsync(JAModel.ShopItem _item)
         await _repo.CreateNewUserAsync(_newUser);
     }
 
-    public async Task<List<Store>> GetStoresAsync()
-    {
-        return await _repo.GetStoresAsync();
-    }
-    public async Task CreateNewStoreAsync(JAModel.Store _newStore)
-    {
-        await _repo.CreateNewStoreAsync(_newStore);
-    }
 
     public async Task ChangePriceAsync(JAModel.ShopItem _item, float _newPrice, int storeID)
     {

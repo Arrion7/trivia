@@ -10,7 +10,6 @@
         "dependencies": {
           "ConsoleProjBL": "1.0.0",
           "ConsoleProjDL": "1.0.0",
-          "ConsoleProjModel": "1.0.0",
           "Microsoft.EntityFrameworkCore.Design": "6.0.4",
           "Serilog.AspNetCore": "5.0.0",
           "Serilog.Sinks.Console": "4.0.1",

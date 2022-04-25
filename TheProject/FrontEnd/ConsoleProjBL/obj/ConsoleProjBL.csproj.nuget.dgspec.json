@@ -35,8 +35,8 @@
               "G:\\Training\\P2\\TheProject\\FrontEnd\\ConsoleProjDL\\ConsoleProjDL.csproj": {
                 "projectPath": "G:\\Training\\P2\\TheProject\\FrontEnd\\ConsoleProjDL\\ConsoleProjDL.csproj"
               },
-              "G:\\Training\\P2\\TheProject\\FrontEnd\\ConsoleProjModel\\ConsoleProjModel.csproj": {
-                "projectPath": "G:\\Training\\P2\\TheProject\\FrontEnd\\ConsoleProjModel\\ConsoleProjModel.csproj"
+              "G:\\Training\\P2\\TheProject\\FrontEnd\\Models\\ConsoleProjModel.csproj": {
+                "projectPath": "G:\\Training\\P2\\TheProject\\FrontEnd\\Models\\ConsoleProjModel.csproj"
               }
             }
           }
@@ -103,8 +103,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "G:\\Training\\P2\\TheProject\\FrontEnd\\ConsoleProjModel\\ConsoleProjModel.csproj": {
-                "projectPath": "G:\\Training\\P2\\TheProject\\FrontEnd\\ConsoleProjModel\\ConsoleProjModel.csproj"
+              "G:\\Training\\P2\\TheProject\\FrontEnd\\Models\\ConsoleProjModel.csproj": {
+                "projectPath": "G:\\Training\\P2\\TheProject\\FrontEnd\\Models\\ConsoleProjModel.csproj"
               }
             }
           }
@@ -163,14 +163,14 @@
         }
       }
     },
-    "G:\\Training\\P2\\TheProject\\FrontEnd\\ConsoleProjModel\\ConsoleProjModel.csproj": {
+    "G:\\Training\\P2\\TheProject\\FrontEnd\\Models\\ConsoleProjModel.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "G:\\Training\\P2\\TheProject\\FrontEnd\\ConsoleProjModel\\ConsoleProjModel.csproj",
+        "projectUniqueName": "G:\\Training\\P2\\TheProject\\FrontEnd\\Models\\ConsoleProjModel.csproj",
         "projectName": "ConsoleProjModel",
-        "projectPath": "G:\\Training\\P2\\TheProject\\FrontEnd\\ConsoleProjModel\\ConsoleProjModel.csproj",
+        "projectPath": "G:\\Training\\P2\\TheProject\\FrontEnd\\Models\\ConsoleProjModel.csproj",
         "packagesPath": "C:\\Users\\Nova\\.nuget\\packages\\",
-        "outputPath": "G:\\Training\\P2\\TheProject\\FrontEnd\\ConsoleProjModel\\obj\\",
+        "outputPath": "G:\\Training\\P2\\TheProject\\FrontEnd\\Models\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

@@ -1,6 +1,7 @@
+using System.ComponentModel.DataAnnotations;
 namespace JAModel;
 
-public class Users
+public class users
 {
     private int id = 0;
     private string userName = "";
@@ -8,7 +9,8 @@ public class Users
     private string firstName = "";
     private string lastName = "";
 
-    public int Id
+    [Key]
+    public int userid
     {
         get => id;
         set
@@ -16,8 +18,7 @@ public class Users
             id = value;
         }
     }
-
-    public string UserName
+    public string username
     {
         get => userName;
         set
@@ -25,7 +26,7 @@ public class Users
             userName = value;
         }
     }
-    public string PassWord
+    public string password
     {
         get => passWord;
         set
@@ -33,7 +34,7 @@ public class Users
             passWord = value;
         }
     }
-    public string FirstName
+    public string firstname
     {
         get => firstName;
         set
@@ -41,7 +42,7 @@ public class Users
             firstName = value;
         }
     }
-    public string LastName
+    public string lastname
     {
         get => lastName;
         set

@@ -1,16 +1,21 @@
 using Microsoft.EntityFrameworkCore;
-
+using JAModel;
 namespace JAConsoleDL;
 public class Context : DbContext
 {
-    public Context() : base()
-    {}
 
-    public Context(DbContextOptions options) : base(options){}
 
-    public DbSet<JAModel.UserPass> Users {get; set;}
+    public Context() : base() { }
 
-    public DbSet<JAModel.ShopItem> ShopItem {get; set; }
+    public Context(DbContextOptions options) : base(options){ }
+
+    public DbSet<users> users {get; set;}
+    protected override void OnModelCreating(ModelBuilder modelBuilder)
+    {
+        modelBuilder.Entity<users>().Property(i => i.userid).ValueGeneratedOnAdd();
+    }
+
+
 
 
 
