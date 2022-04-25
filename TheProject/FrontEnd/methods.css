@@ -8,7 +8,7 @@
     display: block;
     position: relative;
     text-align: center;
-    font-size: 30px;
+    font-size: 19px;
     font-weight: 20cm;
 ;
 
@@ -16,6 +16,7 @@
 
 .questionfont
 {
+    font-size: 25px;
     display: block;
     position: relative;
     font-style:italic;
@@ -25,7 +26,7 @@
 
 .difficulty
 {
-    font-size: 24px;
+    font-size: 19px;
     display: block;
     position: relative;
     text-align: center;
