@@ -3,13 +3,13 @@
 A trivia game 
 
 ## Tables
-
 - Users(login)
 - Session
 - Leaderboard
 - UserStats
 - Questions Table
 - Daily Questions Table
+
 ## User Functions
 - User should be able to log in or make an account
 - User should be able to answer questions 
@@ -24,6 +24,7 @@ A trivia game
 - Users can choose difficulty of questions 
 - Users can choose category of questions
 - User can add and view friends
+
 ## MVP
 - User should be able to log in or make an account
 - User should be able to answer questions 
@@ -33,6 +34,7 @@ A trivia game
 - User should see their score increment after a correct answer
 - User should be able to view other players stats screen
 - User can share score on social media
+
 ## Stretch Goals
 - User should be allowed to invite a friend to compete against
 - Mode that all users answer daily random questions
