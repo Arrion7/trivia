@@ -379,3 +379,36 @@ FROM users AS u
 2022-04-25 00:12:03.791 -04:00 [INF] Executed endpoint 'WebAPI.Controllers.ItemController.GetAllUsers (WebAPI)'
 2022-04-25 00:12:03.796 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7143/api/Item/GetUsers - - - 200 - application/json;+charset=utf-8 1116.4355ms
 2022-04-25 00:12:24.663 -04:00 [INF] Application is shutting down...
+2022-04-25 21:29:26.078 -04:00 [INF] Now listening on: https://localhost:7143
+2022-04-25 21:29:26.107 -04:00 [INF] Now listening on: http://localhost:5046
+2022-04-25 21:29:26.111 -04:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-04-25 21:29:26.112 -04:00 [INF] Hosting environment: Development
+2022-04-25 21:29:26.113 -04:00 [INF] Content root path: G:\Training\P2\TheProject\FrontEnd\WebAPI\
+2022-04-25 21:29:26.210 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7143/swagger/index.html - -
+2022-04-25 21:29:26.316 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7143/swagger/index.html - - - 200 - text/html;charset=utf-8 108.1147ms
+2022-04-25 21:29:26.348 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7143/swagger/swagger-ui-standalone-preset.js - -
+2022-04-25 21:29:26.348 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7143/swagger/swagger-ui-bundle.js - -
+2022-04-25 21:29:26.348 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7143/swagger/swagger-ui.css - -
+2022-04-25 21:29:26.364 -04:00 [INF] Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+2022-04-25 21:29:26.366 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7143/swagger/swagger-ui.css - - - 200 143632 text/css 17.8539ms
+2022-04-25 21:29:26.367 -04:00 [INF] Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A'
+2022-04-25 21:29:26.369 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7143/swagger/swagger-ui-standalone-preset.js - - - 200 337162 application/javascript 21.4530ms
+2022-04-25 21:29:26.378 -04:00 [INF] Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+2022-04-25 21:29:26.380 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7143/swagger/swagger-ui-bundle.js - - - 200 1092889 application/javascript 32.3471ms
+2022-04-25 21:29:26.538 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7143/swagger/v1/swagger.json - -
+2022-04-25 21:29:26.557 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7143/swagger/favicon-32x32.png - -
+2022-04-25 21:29:26.558 -04:00 [INF] Sending file. Request path: '/favicon-32x32.png'. Physical path: 'N/A'
+2022-04-25 21:29:26.560 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7143/swagger/favicon-32x32.png - - - 200 628 image/png 2.9322ms
+2022-04-25 21:29:26.605 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7143/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 67.0426ms
+2022-04-25 21:29:29.639 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7143/api/Item/GetUsers - -
+2022-04-25 21:29:29.655 -04:00 [INF] Executing endpoint 'WebAPI.Controllers.ItemController.GetAllUsers (WebAPI)'
+2022-04-25 21:29:29.663 -04:00 [INF] Route matched with {action = "GetAllUsers", controller = "Item"}. Executing controller action with signature System.Collections.Generic.List`1[JAModel.users] GetAllUsers() on controller WebAPI.Controllers.ItemController (WebAPI).
+2022-04-25 21:29:30.648 -04:00 [INF] Entity Framework Core 6.0.4 initialized 'Context' using provider 'Npgsql.EntityFrameworkCore.PostgreSQL:6.0.4+6cb649128e3e7aa8eddd77dfa75b34bad51e6e94' with options: None
+2022-04-25 21:29:31.357 -04:00 [INF] Executed DbCommand (63ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT u.userid, u.firstname, u.lastname, u.password, u.username
+FROM users AS u
+2022-04-25 21:29:31.408 -04:00 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[JAModel.users, ConsoleProjModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2022-04-25 21:29:31.414 -04:00 [INF] Executed action WebAPI.Controllers.ItemController.GetAllUsers (WebAPI) in 1746.6786ms
+2022-04-25 21:29:31.415 -04:00 [INF] Executed endpoint 'WebAPI.Controllers.ItemController.GetAllUsers (WebAPI)'
+2022-04-25 21:29:31.419 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7143/api/Item/GetUsers - - - 200 - application/json;+charset=utf-8 1779.7452ms
+2022-04-25 21:29:34.535 -04:00 [INF] Application is shutting down...
