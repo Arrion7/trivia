@@ -48,3 +48,5 @@ A trivia game
 - TypeScript
 - Open Trivia API
 - ASP.NET
+- Angular
+- Bootstrap
