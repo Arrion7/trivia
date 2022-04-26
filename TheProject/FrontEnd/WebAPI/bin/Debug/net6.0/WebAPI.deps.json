@@ -11,6 +11,7 @@
           "ConsoleProjBL": "1.0.0",
           "ConsoleProjDL": "1.0.0",
           "Microsoft.EntityFrameworkCore.Design": "6.0.4",
+          "Microsoft.EntityFrameworkCore.SqlServer": "6.0.4",
           "Serilog.AspNetCore": "5.0.0",
           "Serilog.Sinks.Console": "4.0.1",
           "Swashbuckle.AspNetCore": "6.2.3"
@@ -179,6 +180,18 @@
         },
         "runtime": {
           "lib/net6.0/Microsoft.EntityFrameworkCore.Relational.dll": {
+            "assemblyVersion": "6.0.4.0",
+            "fileVersion": "6.0.422.16106"
+          }
+        }
+      },
+      "Microsoft.EntityFrameworkCore.SqlServer/6.0.4": {
+        "dependencies": {
+          "Microsoft.Data.SqlClient": "4.1.0",
+          "Microsoft.EntityFrameworkCore.Relational": "6.0.4"
+        },
+        "runtime": {
+          "lib/net6.0/Microsoft.EntityFrameworkCore.SqlServer.dll": {
             "assemblyVersion": "6.0.4.0",
             "fileVersion": "6.0.422.16106"
           }
@@ -893,6 +906,13 @@
       "sha512": "sha512-E867NbEXYRTElBF5ff+1AN5Awa1jkORy/Rrm0ueibaTAV5uw89LsLoH6yTe+b9urZTWMHtLfGd1RDdNjk8+KzA==",
       "path": "microsoft.entityframeworkcore.relational/6.0.4",
       "hashPath": "microsoft.entityframeworkcore.relational.6.0.4.nupkg.sha512"
+    },
+    "Microsoft.EntityFrameworkCore.SqlServer/6.0.4": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-rMJcVbMxrXmufywA1wYUMqLuxS7PvoPVxR8juUGwJcBdQ31rKyDBxII3i5B2JrgSgWXGiy8V7n9acxKRTX03fw==",
+      "path": "microsoft.entityframeworkcore.sqlserver/6.0.4",
+      "hashPath": "microsoft.entityframeworkcore.sqlserver.6.0.4.nupkg.sha512"
     },
     "Microsoft.Extensions.ApiDescription.Server/3.0.0": {
       "type": "package",

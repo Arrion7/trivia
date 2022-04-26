@@ -3,7 +3,7 @@ using JAModel;
 namespace JAConsoleDL;
 public class Context : DbContext
 {
-
+    //command: dotnet ef migrations add <name> -c Context --startup-project ../WebAPI
 
     public Context() : base() { }
 

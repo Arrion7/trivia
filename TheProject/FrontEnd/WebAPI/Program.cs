@@ -4,6 +4,7 @@ using JAConsoleDL;
 using JAConsoleBL;
 using Microsoft.EntityFrameworkCore;
 
+
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Host.UseSerilog((context, config) =>
@@ -28,7 +29,8 @@ builder.Services.AddSwaggerGen();
 //Singleton - for the entire application's lifetime, it shares the one instance
 //Scoped - For every HTTP request, the new instance is spun up
 //Transient - for every time it calls for the class, it spins up a new intance
-builder.Services.AddDbContext<Context>(options => options.UseNpgsql(builder.Configuration.GetConnectionString("DBPostgre")));
+// builder.Services.AddDbContext<Context>(options => options.UseNpgsql(builder.Configuration.GetConnectionString("DBPostgre")));
+builder.Services.AddDbContext<Context>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("DBTrivia")));
 
 
 builder.Services.AddScoped<IRepo, EFRepo>();

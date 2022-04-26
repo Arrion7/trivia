@@ -161,3 +161,4 @@ G:\Training\P2\TheProject\FrontEnd\WebAPI\obj\Debug\net6.0\refint\WebAPI.dll
 G:\Training\P2\TheProject\FrontEnd\WebAPI\obj\Debug\net6.0\WebAPI.pdb
 G:\Training\P2\TheProject\FrontEnd\WebAPI\obj\Debug\net6.0\WebAPI.genruntimeconfig.cache
 G:\Training\P2\TheProject\FrontEnd\WebAPI\obj\Debug\net6.0\ref\WebAPI.dll
+G:\Training\P2\TheProject\FrontEnd\WebAPI\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.SqlServer.dll

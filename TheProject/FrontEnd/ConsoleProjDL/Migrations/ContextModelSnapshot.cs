@@ -29,14 +29,6 @@ namespace ConsoleProjDL.Migrations
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("userid"));
 
-                    b.Property<string>("firstname")
-                        .IsRequired()
-                        .HasColumnType("text");
-
-                    b.Property<string>("lastname")
-                        .IsRequired()
-                        .HasColumnType("text");
-
                     b.Property<string>("password")
                         .IsRequired()
                         .HasColumnType("text");

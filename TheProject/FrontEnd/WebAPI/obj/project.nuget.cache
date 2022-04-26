@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "dv5quOskR6xyIJi9TQSFHfOumvz2Lw2tk3x8OZrM5jR7BpnFQs5YIlohqcUwOjz+aZGQvuwxU84atzfvs2E5NA==",
+  "dgSpecHash": "WPXOO94jRToJiEkT2b91uO4YaREclLbHKuw53nu4oN/g+9SDLBD4g3DEeBkWYE+FpwqJGmVAx/m3B1jS1+h6Ew==",
   "success": true,
   "projectFilePath": "G:\\Training\\P2\\TheProject\\FrontEnd\\WebAPI\\WebAPI.csproj",
   "expectedPackageFiles": [
@@ -16,6 +16,7 @@
     "C:\\Users\\Nova\\.nuget\\packages\\microsoft.entityframeworkcore.analyzers\\6.0.4\\microsoft.entityframeworkcore.analyzers.6.0.4.nupkg.sha512",
     "C:\\Users\\Nova\\.nuget\\packages\\microsoft.entityframeworkcore.design\\6.0.4\\microsoft.entityframeworkcore.design.6.0.4.nupkg.sha512",
     "C:\\Users\\Nova\\.nuget\\packages\\microsoft.entityframeworkcore.relational\\6.0.4\\microsoft.entityframeworkcore.relational.6.0.4.nupkg.sha512",
+    "C:\\Users\\Nova\\.nuget\\packages\\microsoft.entityframeworkcore.sqlserver\\6.0.4\\microsoft.entityframeworkcore.sqlserver.6.0.4.nupkg.sha512",
     "C:\\Users\\Nova\\.nuget\\packages\\microsoft.extensions.apidescription.server\\3.0.0\\microsoft.extensions.apidescription.server.3.0.0.nupkg.sha512",
     "C:\\Users\\Nova\\.nuget\\packages\\microsoft.extensions.caching.abstractions\\6.0.0\\microsoft.extensions.caching.abstractions.6.0.0.nupkg.sha512",
     "C:\\Users\\Nova\\.nuget\\packages\\microsoft.extensions.caching.memory\\6.0.1\\microsoft.extensions.caching.memory.6.0.1.nupkg.sha512",

@@ -11,7 +11,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace ConsoleProjDL.Migrations
 {
     [DbContext(typeof(Context))]
-    [Migration("20220425041153_initial")]
+    [Migration("20220426213247_initial")]
     partial class initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -30,14 +30,6 @@ namespace ConsoleProjDL.Migrations
                         .HasColumnType("integer");
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("userid"));
-
-                    b.Property<string>("firstname")
-                        .IsRequired()
-                        .HasColumnType("text");
-
-                    b.Property<string>("lastname")
-                        .IsRequired()
-                        .HasColumnType("text");
 
                     b.Property<string>("password")
                         .IsRequired()

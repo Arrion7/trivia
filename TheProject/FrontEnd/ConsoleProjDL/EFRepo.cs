@@ -13,13 +13,7 @@ public class EFRepo : IRepo
     }
     public async Task<List<users>> GetAllUsersAsync()
     {
-        // return await _context.users.ToListAsync();
-        throw new NotImplementedException();
-    }
-
-    public List<users> GetAllUsers()
-    {
-        return _context.users.Select(i => i).ToList();
+        return await _context.users.ToListAsync();
     }
 
     public Task AddOrderItemAsync()
