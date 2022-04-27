@@ -1,0 +1,131 @@
+{
+    "response_code": 0,
+    "questions": [
+        {
+            "category": "General Knowledge",
+            "type": "multiple",
+            "difficulty": "hard",
+            "question": "What type of dog is 'Handsome Dan', the mascot of Yale University?",
+            "correct_answer": "Bulldog",
+            "answers": [
+                "Yorkshire Terrier",
+                "Bulldog",
+                "Boxer",
+                "Pug"
+            ]
+        },
+        {
+            "category": "General Knowledge",
+            "type": "multiple",
+            "difficulty": "easy",
+            "question": "Where is the train station &quot;Llanfair&shy;pwllgwyngyll&shy;gogery&shy;chwyrn&shy;drobwll&shy;llan&shy;tysilio&shy;gogo&shy;goch&quot;?",
+            "correct_answer": "Wales",
+            "answers": [
+                "Moldova",
+                "Czech Republic",
+                "Wales",
+                "Denmark"
+            ]
+        },
+        {
+            "category": "General Knowledge",
+            "type": "multiple",
+            "difficulty": "easy",
+            "question": "What is the name of the Jewish New Year?",
+            "correct_answer": "Rosh Hashanah",
+            "answers": [
+                "Rosh Hashanah",
+                "Elul",
+                "New Year",
+                "Succoss"
+            ]
+        },
+        {
+            "category": "General Knowledge",
+            "type": "boolean",
+            "difficulty": "easy",
+            "question": "It is automatically considered entrapment in the United States if the police sell you illegal substances without revealing themselves.",
+            "correct_answer": "False",
+            "answers": [
+                "True",
+                "False"
+            ]
+        },
+        {
+            "category": "General Knowledge",
+            "type": "multiple",
+            "difficulty": "easy",
+            "question": "Which one of the following rhythm games was made by Harmonix?",
+            "correct_answer": "Rock Band",
+            "answers": [
+                "Meat Beat Mania",
+                "Guitar Hero Live",
+                "Rock Band",
+                "Dance Dance Revolution"
+            ]
+        },
+        {
+            "category": "General Knowledge",
+            "type": "multiple",
+            "difficulty": "medium",
+            "question": "The new One World Trade Center in Manhattan, New York City was designed by which architect? ",
+            "correct_answer": "David Childs",
+            "answers": [
+                "Bjarke Ingels",
+                "David Childs",
+                "Michael Arad",
+                "Fumihiko Maki"
+            ]
+        },
+        {
+            "category": "General Knowledge",
+            "type": "multiple",
+            "difficulty": "medium",
+            "question": "Amsterdam Centraal station is twinned with what station?",
+            "correct_answer": "London Liverpool Street",
+            "answers": [
+                "Frankfurt (Main) Hauptbahnhof",
+                "Paris Gare du Nord",
+                "Brussels Midi",
+                "London Liverpool Street"
+            ]
+        },
+        {
+            "category": "General Knowledge",
+            "type": "boolean",
+            "difficulty": "hard",
+            "question": "Stagecoach owned &quot;South West Trains&quot; before losing the rights to FirstGroup and MTR in March of 2017.",
+            "correct_answer": "True",
+            "answers": [
+                "True",
+                "False"
+            ]
+        },
+        {
+            "category": "General Knowledge",
+            "type": "multiple",
+            "difficulty": "medium",
+            "question": "Computer manufacturer Compaq was acquired for $25 billion dollars in 2002 by which company?",
+            "correct_answer": "Hewlett-Packard",
+            "answers": [
+                "Toshiba",
+                "Asus",
+                "Hewlett-Packard",
+                "Dell"
+            ]
+        },
+        {
+            "category": "General Knowledge",
+            "type": "multiple",
+            "difficulty": "hard",
+            "question": "If you planted the seeds of Quercus robur, what would grow?",
+            "correct_answer": "Trees",
+            "answers": [
+                "Grains",
+                "Trees",
+                "Vegetables",
+                "Flowers"
+            ]
+        }
+    ]
+}
