@@ -32,9 +32,14 @@
                 </div>
             </div>
             <div class="options">
-                <ol *ngFor="let choice of questionList[currentQuestion]?.answers">
+                <ol *ngFor="let choice of questionList[currentQuestion]?.incorrect_answers">
                     <li (click)="answer(currentQuestion,choice)">
                         <div class="card">{{choice}}</div>
+                    </li>
+                </ol>
+                <ol >
+                    <li (click)="answer(currentQuestion,questionList[currentQuestion]?.correct_answer)">
+                        <div class="card">{{questionList[currentQuestion]?.correct_answer}}</div>
                     </li>
                 </ol>
             </div>
@@ -52,9 +57,10 @@
             <div class="row d-flex justify-content-between">
                 <img style="width: 50%;" class="img-fluid col-sm-12 mx-auto" src="../../assets/img/end.png" alt="">
                 <div class="result tex-center col-md col-sm-12">
-                    <h3>Thank you!!! </h3><h4> <br>You have completed the game <br>This is your resultats:</h4>
-                    <p>Total Correct answered:{{correctAnswer}}</p>
-                    <p>Your score:{{points}}</p>
+                    <h3>Thank you!!! </h3>
+                    <h4> <br>You have completed the game <br>This is your resultats:</h4>
+                    <p>Total Correct answered: {{correctAnswer}}</p>
+                    <p>Your score: {{points}}</p>
                 </div>
             </div>
         </ng-container>

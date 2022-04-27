@@ -33,7 +33,8 @@ export class QuestionsComponent implements OnInit {
   getAllQuestions() {
     this.questionService.getQuestionJson()
       .subscribe(res => {
-        this.questionList = decodeEntity(res.questions);
+        console.log(res);
+        this.questionList = decodeEntity(res.results);
       })
   }
   nextQuestions() {
