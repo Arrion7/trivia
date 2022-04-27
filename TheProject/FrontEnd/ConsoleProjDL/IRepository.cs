@@ -8,7 +8,9 @@ public interface IRepo
     Task CreateNewAdminAsync(JAModel.UserPass _newAdmin);
     Task<List<JAModel.UserPass>> GetAllAdminsAsync();
     Task<List<users>> GetAllUsersAsync();
-    Task SaveAdminsAsync(); 
+
+
+    Task<List<users>> SearchUsers(string username);
 
 }
 

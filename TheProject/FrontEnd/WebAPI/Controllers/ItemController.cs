@@ -21,6 +21,7 @@ namespace WebAPI.Controllers
         
         }
 
+        
 
 
         [HttpGet("GetUsers")]
@@ -29,7 +30,11 @@ namespace WebAPI.Controllers
             return await _bl.GetAllUsersAsync(); 
         }
 
-
+        [HttpGet("SearchUser/{username}")]
+        public async Task<List<users>> SearchUser(string username)
+        {
+            return await _bl.SearchUsers(username);
+        }
 
 
         [HttpGet("GetAdmins")]

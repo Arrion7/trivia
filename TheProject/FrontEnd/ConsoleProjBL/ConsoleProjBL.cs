@@ -26,15 +26,14 @@ public class ConsoleProjBL : IJABL
         return await _repo.GetAllUsersAsync();
     }
 
-    public async Task SaveAdminsAsync()
-    {
-        await _repo.SaveAdminsAsync();
-    }
 
     public async Task CreateNewUserAsync(JAModel.UserPass _newUser)
     {
         await _repo.CreateNewUserAsync(_newUser);
     }
 
-
+    public async Task<List<users>> SearchUsers(string username)
+    {
+        return await _repo.SearchUsers(username);
+    }
 }
