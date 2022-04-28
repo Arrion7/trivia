@@ -7,13 +7,19 @@ import { WelcomeComponent } from './welcome/welcome.component';
 import { QuestionsComponent } from './questions/questions.component';
 import { HeaderComponent } from './header/header.component';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { HomepageComponent } from './homepage/homepage.component';
+import { LoginComponent } from './login/login.component';
+import { GamesComponent } from './games/games.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     WelcomeComponent,
     QuestionsComponent,
-    HeaderComponent
+    HeaderComponent,
+    HomepageComponent,
+    LoginComponent,
+    GamesComponent
   ],
   imports: [
     BrowserModule,

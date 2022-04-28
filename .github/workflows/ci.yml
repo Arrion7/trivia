@@ -1,5 +1,6 @@
-name: CI
 
+name: CI
+ 
 on:
   push:
     branches: [ main ]
@@ -31,43 +32,6 @@ jobs:
         uses: actions/setup-java@v1
         with:
           java-version: 1.11
-
-      - name: Cache SonarCloud packages
-        uses: actions/cache@v1
-        with:
-          path: ~\sonar\cache
-          key: ${{ runner.os }}-sonar
-          restore-keys: ${{ runner.os }}-sonar
-          
-      - name: Cache SonarCloud scanner
-        id: cache-sonar-scanner
-        uses: actions/cache@v1
-        with:
-          path: .\.sonar\scanner
-          key: ${{ runner.os }}-sonar-scanner
-          restore-keys: ${{ runner.os }}-sonar-scanner
-          
-      - name: Install SonarCloud scanner
-        if: steps.cache-sonar-scanner.outputs.cache-hit != 'true'
-        shell: powershell
-        run: |
-          New-Item -Path .\.sonar\scanner -ItemType Directory
-          dotnet tool update dotnet-sonarscanner --tool-path .\.sonar\scanner
-          
-      - name: Test
-        run: |
-           cd ./
-           dotnet test --logger trx --collect:"XPlat Code Coverage" -- DataCollectionRunSettings.DataCollectors.DataCollector.Configuration.Format=opencover
-       
-      - name: Build and analyze
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
-          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-        shell: powershell
-        run: |
-            .\.sonar\scanner\dotnet-sonarscanner begin /k:"220321-NET_P0-NovaFlash321" /o:"220321-net" /d:sonar.login="${{ secrets.SONAR_TOKEN }}" /d:sonar.host.url="https://sonarcloud.io"
-            dotnet build .\ConsoleProj.sln
-            .\.sonar\scanner\dotnet-sonarscanner end /d:sonar.login="${{ secrets.SONAR_TOKEN }}"
             
             
   Build:
@@ -91,7 +55,7 @@ jobs:
       with:
         name: appsettings.json
         json: ${{secrets.APPSETTINGS}}
-        dir: ./WebAPI
+        dir: ./FrontEnd/WebAPI
     
     - name: Build and Push Docker Images
       uses: docker/build-push-action@v2.10.0
@@ -111,3 +75,4 @@ jobs:
           app-name: 'novaflashapplication'
           publish-profile: ${{secrets.AZURE_PUBLISH_PROFILE}}
           images: index.docker.io/${{secrets.DOCKERHUB_USERNAME}}/stacklite:${{github.sha}}
+      
