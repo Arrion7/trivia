@@ -1,5 +1,5 @@
-using JAModel;
-namespace JAConsoleBL;
+using Models;
+namespace TriviaBL;
 
 public interface IJABL
 {
@@ -7,12 +7,12 @@ public interface IJABL
     /// Creats a new admin, that can restock inventory, and add new stores if opened up
     /// </summary>
     /// <param name="_newAdmin">Credentials of the new admin</param>
-    Task CreateNewAdminAsync(JAModel.UserPass _newAdmin);
+    Task CreateNewAdminAsync(Models.UserPass _newAdmin);
     /// <summary>
     /// Gets all administrators from the application
     /// </summary>
     /// <returns>Returns a list of admins to check if the user is an admin</returns>
-    Task<List<JAModel.UserPass>> GetAllAdminsAsync();
+    Task<List<Models.UserPass>> GetAllAdminsAsync();
     /// <summary>
     /// Gets all users from the application, including administrators
     /// </summary>
@@ -25,7 +25,7 @@ public interface IJABL
     /// Creates a new user in the database that can create orders
     /// </summary>
     /// <param name="_newUser">User credentials</param>
-    Task CreateNewUserAsync(JAModel.UserPass _newUser);
+    Task CreateNewUserAsync(Models.UserPass _newUser);
 
     
 

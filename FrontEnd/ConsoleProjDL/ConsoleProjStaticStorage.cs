@@ -1,5 +1,5 @@
-﻿using JAModel;
-namespace JAConsoleDL;
+﻿using Models;
+namespace TriviaDL;
 public static class ConsoleProjStaticStorage
 {
     

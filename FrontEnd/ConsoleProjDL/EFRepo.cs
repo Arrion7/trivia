@@ -1,8 +1,8 @@
 using System.Linq;
 using Microsoft.EntityFrameworkCore;
-using JAModel;
+using Models;
 
-namespace JAConsoleDL;
+namespace TriviaDL;
 
 public class EFRepo : IRepo
 {
@@ -21,19 +21,19 @@ public class EFRepo : IRepo
         return await _context.users.Where(x=>x.username == username).ToListAsync();
     }
 
-    public Task CreateNewAdminAsync(JAModel.UserPass _newAdmin)
+    public Task CreateNewAdminAsync(Models.UserPass _newAdmin)
     {
         throw new NotImplementedException();
     }
 
 
-    public Task CreateNewUserAsync(JAModel.UserPass _newUser)
+    public Task CreateNewUserAsync(Models.UserPass _newUser)
     {
         throw new NotImplementedException();
     }
 
 
-    public Task<List<JAModel.UserPass>> GetAllAdminsAsync()
+    public Task<List<Models.UserPass>> GetAllAdminsAsync()
     {
         throw new NotImplementedException();
     }

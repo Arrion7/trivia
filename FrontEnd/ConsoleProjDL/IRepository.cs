@@ -1,12 +1,12 @@
-using JAModel;
-namespace JAConsoleDL;
+using Models;
+namespace TriviaDL;
 
 public interface IRepo
 {
 
-    Task CreateNewUserAsync(JAModel.UserPass _newUser);
-    Task CreateNewAdminAsync(JAModel.UserPass _newAdmin);
-    Task<List<JAModel.UserPass>> GetAllAdminsAsync();
+    Task CreateNewUserAsync(Models.UserPass _newUser);
+    Task CreateNewAdminAsync(Models.UserPass _newAdmin);
+    Task<List<Models.UserPass>> GetAllAdminsAsync();
     Task<List<users>> GetAllUsersAsync();
 
 

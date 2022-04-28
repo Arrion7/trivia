@@ -1,7 +1,7 @@
-using JAModel;
-using JAConsoleDL;
+using Models;
+using TriviaDL;
 
-namespace JAConsoleBL;
+namespace TriviaBL;
 
 public class ConsoleProjBL : IJABL 
 { 
@@ -27,7 +27,7 @@ public class ConsoleProjBL : IJABL
     }
 
 
-    public async Task CreateNewUserAsync(JAModel.UserPass _newUser)
+    public async Task CreateNewUserAsync(Models.UserPass _newUser)
     {
         await _repo.CreateNewUserAsync(_newUser);
     }
