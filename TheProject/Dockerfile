@@ -14,7 +14,7 @@ WORKDIR /app
 COPY . .
 
 #We restore and build our application
-RUN dotnet clean TheProject.sln
+#RUN dotnet clean TheProject.sln
 RUN dotnet publish ./FrontEnd/WebAPI --configuration Release -o ./publish
 
 #Multistage build
