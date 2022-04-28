@@ -61,7 +61,7 @@ jobs:
       uses: docker/build-push-action@v2.10.0
       with:
         context: ./
-        file: ./tuckertrivia/TheProject/Dockerfile
+        file: ./TheProject/Dockerfile
         tags: index.docker.io/${{secrets.DOCKERHUB_USERNAME}}/stacklite:${{github.sha}}
         push: true
         
