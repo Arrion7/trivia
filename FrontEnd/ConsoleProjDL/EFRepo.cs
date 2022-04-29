@@ -21,15 +21,15 @@ public class EFRepo : IRepo
         return await _context.users.Where(x=>x.username == username).ToListAsync();
     }
 
-    public Task CreateNewAdminAsync(Models.UserPass _newAdmin)
+    public async Task CreateNewUserAsync(string username, string password)
     {
-        throw new NotImplementedException();
-    }
-
-
-    public Task CreateNewUserAsync(Models.UserPass _newUser)
-    {
-        throw new NotImplementedException();
+        users _user = new users(){
+            username = username,
+            password = password
+        };
+        await _context.users.AddAsync(_user);
+        _context.SaveChanges();
+        _context.ChangeTracker.Clear();
     }
 
 

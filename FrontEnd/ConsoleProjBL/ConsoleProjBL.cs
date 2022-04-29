@@ -10,26 +10,16 @@ public class ConsoleProjBL : IJABL
     {
         _repo = repo;
     }
-    public async Task CreateNewAdminAsync(UserPass _newAdmin)
-    {
-            await _repo.CreateNewAdminAsync(_newAdmin);
-    }
 
-    public async Task<List<UserPass>> GetAllAdminsAsync()
-    {
-        
-        return await _repo.GetAllAdminsAsync();
-        
-    }
     public async Task<List<users>> GetAllUsersAsync()
     {
         return await _repo.GetAllUsersAsync();
     }
 
 
-    public async Task CreateNewUserAsync(Models.UserPass _newUser)
+    public async Task CreateNewUserAsync(string username, string password)
     {
-        await _repo.CreateNewUserAsync(_newUser);
+        await _repo.CreateNewUserAsync(username, password);
     }
 
     public async Task<List<users>> SearchUsers(string username)
