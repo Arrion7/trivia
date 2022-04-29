@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { LoginService } from 'src/app/service/login.service';
 
 @Component({
@@ -14,7 +15,7 @@ export class LoginComponent implements OnInit {
     username:['', Validators.required],
     password:['', Validators.required]
   })
-  constructor( private formBuilder: FormBuilder,private loginService: LoginService) { }
+  constructor( private formBuilder: FormBuilder,private loginService: LoginService, private router: Router) { }
 
   ngOnInit(): void {
   }
@@ -22,9 +23,13 @@ export class LoginComponent implements OnInit {
   onSubmit(){
     let username  = this.loginForm.controls["username"].value;
     let password  = this.loginForm.controls["password"].value;
-    console.log('submit');
-    this.loginService.getByUsername(username).subscribe(data=>{
-      console.log(data)
+    console.log(password);
+    this.loginService.getByUsername(username).subscribe((data: any)=>{
+      if(data != null && data[0].password === password){
+        localStorage.setItem("username", username);
+        this.router.navigate(["../welcome"]);
+      }
+      
 
     });
   }
