@@ -15,9 +15,9 @@ export class QuestionsComponent implements OnInit {
   public currentQuestion: number = 0;
   public points: number = 0;
   private setCounter: number = 30;
-  private setHard: number = 1500;
-  private setMedium: number = 1000;
-  private setEasy: number = 500;
+  private setHard: number = 2000;
+  private setMedium: number = 1500;
+  private setEasy: number = 1000;
   counter = this.setCounter;
   public intervals: any;
   progress: string = "0";
