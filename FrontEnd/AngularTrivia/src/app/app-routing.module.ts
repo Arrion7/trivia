@@ -5,6 +5,8 @@ import { QuestionsComponent } from './questions/questions.component';
 import { WelcomeComponent } from './welcome/welcome.component';
 import { LoginComponent } from './login/login.component';
 import { GamesComponent } from './games/games.component';
+import { CategoryComponent } from './category/category.component';
+
 
 
 const routes: Routes = [
@@ -13,7 +15,10 @@ const routes: Routes = [
   {path:"welcome", component:WelcomeComponent},
   {path:"questions", component:QuestionsComponent},
   {path:"login", component:LoginComponent},
-  {path:"games", component:GamesComponent}
+  {path:"games", component:GamesComponent},
+  {path:"category", component:CategoryComponent}
+
+
 ];
 
 @NgModule({
