@@ -1,0 +1,69 @@
+<div class="container mt-5 d-flex justify-content-between p-3">
+    <div class="card">
+        <div class="d-flex justify-content-between p-3">
+            <div class="image">
+                <img src="../../assets/img/logo.png" alt="logo" width="50">
+            </div>
+            <div class="quiz-header">
+                <h4 style="font-family: cursive;"> Tucker's Trivia Game</h4>
+                <span style="font-style: italic;">Welcome {{name}}</span>
+            </div>
+        </div>
+
+        <ng-container *ngIf="!isGameOver">
+            <div class="d-flex justify-content-around py-3">
+                <div class="score">
+                    <h5>{{points}} Points</h5>
+                </div>
+                <div class="question-remain">
+                    <span style="font-style: italic;">Question {{currentQuestion+1}} of {{questionList.length}}</span>
+                </div>
+                <div class="timer">
+                    <h5>{{counter}} sec ⏰</h5>
+                </div>
+            </div>
+            <div class="progress mb-3">
+                <div class="progress-bar progress-bar-striped bg-success" role="progressbar"
+                    [ngStyle]="{'width':progress+'%'}" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+            <div class="question">
+                <div class="card">
+                    <h3>{{questionList[currentQuestion]?.question}}</h3>
+                </div>
+            </div>
+            <div class="options">
+                <ol *ngFor="let choice of questionList[currentQuestion]?.incorrect_answers">
+                    <li (click)="answer(currentQuestion,choice)">
+                        <div class="card">{{choice}}</div>
+                    </li>
+                </ol>
+                <ol >
+                    <li (click)="answer(currentQuestion,questionList[currentQuestion]?.correct_answer)">
+                        <div class="card">{{questionList[currentQuestion]?.correct_answer}}</div>
+                    </li>
+                </ol>
+            </div>
+            <div class="d-flex justify-content-between">
+                <button [disabled]="currentQuestion===0" class="btn" (click)="previousQuestions()"><i
+                        class="fa text-primary fa-chevron-left fa-3x" aria-hidden="true"></i></button>
+                <button class="btn" (click)="reinitialise()"><i class="fa text-primary fa-refresh fa-3x"
+                        aria-hidden="true"></i></button>
+                <button [disabled]="currentQuestion>(questionList.length-2)" class="btn" (click)="nextQuestions()"><i
+                        class="fa text-primary fa-chevron-right fa-3x" aria-hidden="true"></i></button>
+
+            </div>
+        </ng-container>
+        <ng-container *ngIf="isGameOver">
+            <div class="row d-flex justify-content-between">
+                <img style="width: 50%;" class="img-fluid col-sm-12 mx-auto" src="../../assets/img/end.png" alt="">
+                <div class="result tex-center col-md col-sm-12">
+                    <h3>Thank you!!! </h3>
+                    <h4> <br>You have completed the game <br>This is your results:</h4>
+                    <p>Total Correct answered: {{correctAnswer}}</p>
+                    <p>Your score: {{points}}</p>
+                </div>
+            </div>
+        </ng-container>
+    </div>
+
+</div>
