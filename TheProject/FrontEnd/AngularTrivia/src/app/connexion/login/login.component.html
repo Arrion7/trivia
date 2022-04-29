@@ -20,7 +20,7 @@
         <br>
         <div class="form-group d-flex justify-content-evenly">
           <button class="btn btn-primary center" [disabled]="!loginForm.valid">
-            <span  *ngIf="!loginForm.valid" class="spinner-border spinner-border-sm mr-1"></span>
+            <span  *ngIf="loginForm.valid" class="spinner-border spinner-border-sm mr-1"></span>
             Login
           </button>
           <a routerLink="../register" class="btn btn-link">Register</a>
