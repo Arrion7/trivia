@@ -15,9 +15,9 @@ export class QuestionsComponent implements OnInit {
   public currentQuestion: number = 0;
   public points: number = 0;
   private setCounter: number = 30;
-  private setHard: number = 1500;
-  private setMedium: number = 1000;
-  private setEasy: number = 500;
+  private setHard: number = 2000;
+  private setMedium: number = 1500;
+  private setEasy: number = 1000;
   counter = this.setCounter;
   public intervals: any;
   progress: string = "0";
@@ -32,7 +32,7 @@ export class QuestionsComponent implements OnInit {
   }
   getAllQuestions() {
     this.questionService.getQuestionJson()
-      .subscribe(res => {
+      .subscribe((res: { results: any; }) => {
         console.log(res);
         this.questionList = decodeEntity(res.results);
       })
@@ -49,7 +49,7 @@ export class QuestionsComponent implements OnInit {
     this.progress = this.getProgress();
 
   }
-  reinitialise() {
+  reinitialize() {
     this.currentQuestion = 0;
     this.points = 0;
     this.getAllQuestions();
