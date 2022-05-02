@@ -44,15 +44,15 @@
           </ul>
         </li>
       </ul>
-      <!-- <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"> -->
-      <!-- <button class="btn btn-outline-success" type="submit">Login</button>
-          <button class="btn btn-outline-success" type="submit">Register</button> -->
       <ul class="nav justify-content-end">
         <li class="nav-item">
-          <a class="nav-link active text-reset" aria-current="page" routerLink="../login">Login</a>
+          <a class="nav-link active text-reset" aria-current="page" *ngIf="!isUserConnected"  routerLink="../login">Login</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-reset" routerLink="../register">Register</a>
+          <a class="nav-link text-reset" *ngIf="!isUserConnected"  routerLink="../register">Register</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-reset" *ngIf="isUserConnected" routerLink="../login" (click)="onLogout()">logout</a>
         </li>
       </ul>
     </div>

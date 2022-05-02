@@ -32,19 +32,19 @@
                 </div>
             </div>
             <div class="options">
-                <ol *ngFor="let choice of questionList[currentQuestion]?.incorrect_answers">
+                <ol *ngFor="let choice of questionListRand[currentQuestion]">
                     <li (click)="answer(currentQuestion,choice)">
                         <div class="card">{{choice}}</div>
                     </li>
                 </ol>
-                <ol >
+                <!-- <ol >
                     <li (click)="answer(currentQuestion,questionList[currentQuestion]?.correct_answer)">
                         <div class="card">{{questionList[currentQuestion]?.correct_answer}}</div>
                     </li>
-                </ol>
+                </ol> -->
             </div>
             <div class="d-flex justify-content-between">
-                <button [disabled]="currentQuestion===0" class="btn" (click)="previousQuestions()"><i
+                <button [disabled] class="btn" ><i
                         class="fa text-primary fa-chevron-left fa-3x" aria-hidden="true"></i></button>
                 <button class="btn" (click)="reinitialise()"><i class="fa text-primary fa-refresh fa-3x"
                         aria-hidden="true"></i></button>
@@ -61,6 +61,9 @@
                     <h4> <br>You have completed the game <br>This is your resultats:</h4>
                     <p>Total Correct answered: {{correctAnswer}}</p>
                     <p>Your score: {{points}}</p>
+                    <button class="btn btn-primary btn-lg" (click)="reload()" >
+                        Replay !!!
+                    </button>
                 </div>
             </div>
         </ng-container>
