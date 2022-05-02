@@ -197,8 +197,8 @@ h2 {
   color: rgb(250, 250, 250);
 }
 
-.grid-item-tv {
-  background-image: url("../category/ctg-imgs/ctg-tv.png");
+.grid-item-film {
+  background-image: url("../category/ctg-imgs/ctg-film.png");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -207,7 +207,7 @@ h2 {
   transition: .5s;
 }
 
-.grid-item-tv p {
+.grid-item-film p {
   margin-top: 25px;
   padding: 10px;
   position: absolute;
@@ -269,7 +269,7 @@ h2 {
   color: rgb(220, 214, 196);
 }
 
-.grid-item-animals:hover, .grid-item-books:hover,.grid-item-geography:hover, .grid-item-history:hover, .grid-item-science:hover,.grid-item-tv:hover, .grid-item-anime:hover,.grid-item-sports:hover, .grid-item-mythology:hover {
+.grid-item-animals:hover, .grid-item-books:hover,.grid-item-geography:hover, .grid-item-history:hover, .grid-item-science:hover,.grid-item-film:hover, .grid-item-anime:hover,.grid-item-sports:hover, .grid-item-mythology:hover {
   opacity: 1;
 }
 

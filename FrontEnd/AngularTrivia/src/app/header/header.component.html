@@ -16,22 +16,19 @@
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarLevel" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Level
+              Menu
             </a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <li><a class="dropdown-item" href="#">Easy</a></li>
-              <li><a class="dropdown-item" href="#">Medium</a></li>
-              <li><a class="dropdown-item" href="#">Hard</a></li>
+              <li><a class="dropdown-item" href="/gameMenu">Games</a></li>
+              <li><a class="dropdown-item" href="/category">Category</a></li>
+              <li><a class="dropdown-item" href="/homepage">About Us</a></li>
               <li><hr class="dropdown-divider"></li>
             </ul>
           </li>
         </ul>
-        <form class="d-flex">
-          <button class="btn btn-outline-success" aria-current="page" href="login"> Sign In</button >
-        </form>
-        <form class="d-flex">
-          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-success" type="submit">Search</button>
+        <form class="d-flex" routerLink="/login">
+          <!--<input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">-->
+          <button style="color: darkgreen;">Sign In</button>
         </form>
       </div>
     </div>

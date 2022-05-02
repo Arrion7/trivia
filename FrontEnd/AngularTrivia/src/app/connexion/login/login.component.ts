@@ -10,7 +10,7 @@ import { LoginService } from 'src/app/service/login.service';
 })
 export class LoginComponent implements OnInit {
 
-  
+
   public loginForm=this.formBuilder.group({
     username:['', Validators.required],
     password:['', Validators.required]
@@ -29,7 +29,7 @@ export class LoginComponent implements OnInit {
         localStorage.setItem("username", username);
         this.router.navigate(["../welcome"]);
       }
-      
+
 
     });
   }
