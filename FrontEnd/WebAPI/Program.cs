@@ -1,7 +1,7 @@
-using JAModel;
+using Models;
 using Serilog;
-using JAConsoleDL;
-using JAConsoleBL;
+using TriviaDL;
+using TriviaBL;
 using Microsoft.EntityFrameworkCore;
 
 

@@ -1,5 +1,5 @@
 using System.ComponentModel.DataAnnotations;
-namespace JAModel;
+namespace Models;
 
 public class users
 {

@@ -3,7 +3,6 @@
 
 <ItemGroup>
 <ProjectReference Include="..\Models\ConsoleProjModel.csproj" />
-<ProjectReference Include="..\ConsoleProjDB\ConsoleProjDB.csproj" />
 </ItemGroup>
 
 

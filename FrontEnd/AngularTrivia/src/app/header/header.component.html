@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-primary">
     <div class="container-fluid">
-      <a class="navbar-brand" href="#">
+      <a class="navbar-brand" href="homepage">
         <img src="../../assets/img/logo.png" alt="logo" width="50">
       </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -9,38 +9,28 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Home</a>
+            <a class="nav-link active" aria-current="page" href="games">Games</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Questions</a>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarCategory" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Category
-            </a>
-            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <li><a class="dropdown-item" href="#">General Knowledge</a></li>
-              <li><a class="dropdown-item" href="#">News & Celebrity</a></li>
-              <li><hr class="dropdown-divider"></li>
-              <li><a class="dropdown-item" href="#">Something else here</a></li>
-            </ul>
+            <a class="nav-link" href="category">Category</a>
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarLevel" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Level
+              Menu
             </a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <li><a class="dropdown-item" href="#">Easy</a></li>
-              <li><a class="dropdown-item" href="#">Medium</a></li>
+              <li><a class="dropdown-item" href="/gameMenu">Games</a></li>
+              <li><a class="dropdown-item" href="/category">Category</a></li>
+              <li><a class="dropdown-item" href="/homepage">About Us</a></li>
               <li><hr class="dropdown-divider"></li>
-              <li><a class="dropdown-item" href="#">Something else here</a></li>
             </ul>
           </li>
         </ul>
-        <form class="d-flex">
-          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-success" type="submit">Search</button>
+        <form class="d-flex" routerLink="/login">
+          <!--<input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">-->
+          <button style="color: darkgreen;">Sign In</button>
         </form>
       </div>
     </div>
   </nav>
+

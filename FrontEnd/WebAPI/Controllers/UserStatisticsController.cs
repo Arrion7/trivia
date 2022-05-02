@@ -1,5 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
-using JAConsoleBL;
+using TriviaBL;
 using Models;
 using Microsoft.Extensions.Caching.Memory;
 
