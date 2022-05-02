@@ -67,7 +67,7 @@ export class QuestionsComponent implements OnInit {
   }
 
   answer(currentQtn: number, choice: any) {
-    if(currentQtn === this.questionList.length - 1){
+    if(currentQtn >= this.questionList.length - 1){
       this.isGameOver = true;
       this.stopCounter();
     }
@@ -93,6 +93,10 @@ export class QuestionsComponent implements OnInit {
         this.counter--;
         if (this.counter === 0) {
           this.currentQuestion++;
+          if(this.currentQuestion >= this.questionList.length - 1){
+            this.isGameOver = true;
+            this.stopCounter();
+          }
           this.counter = this.setCounter;
         }
       });
