@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { QuestionsService } from '../service/questions.service';
 import { decodeEntity } from 'html-entities';
 import { interval } from 'rxjs';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-questions',
@@ -12,6 +13,7 @@ export class QuestionsComponent implements OnInit {
 
   public name: string = "";
   public questionList: any = [];
+  public questionListRand: any = [];
   public currentQuestion: number = 0;
   public points: number = 0;
   private setCounter: number = 30;
@@ -23,18 +25,27 @@ export class QuestionsComponent implements OnInit {
   progress: string = "0";
   public correctAnswer: number =0;
   isGameOver : boolean = false;
-  constructor(private questionService: QuestionsService) { }
+  constructor(private questionService: QuestionsService, private router:Router) { }
 
   ngOnInit(): void {
     this.name = localStorage.getItem("name")!;
     this.getAllQuestions();
     this.startCounter();
+    this.router.routeReuseStrategy.shouldReuseRoute = () => false;
   }
   getAllQuestions() {
     this.questionService.getQuestionJson()
       .subscribe(res => {
         this.questionList = decodeEntity(res.results);
-      })
+        for(let i =0; i < this.questionList.length; i++){
+          this.questionList[i].incorrect_answers.push(this.questionList[i].correct_answer);
+          console.log(this.questionList[i].incorrect_answers);
+          this.questionListRand[i] = this.randomArrayShuffle(this.questionList[i].incorrect_answers);
+          console.log(this.questionList[i].incorrect_answers);
+          console.log(this.questionList[i].incorrect_answers);
+        }
+      });
+      
   }
   nextQuestions() {
     this.currentQuestion++;
@@ -56,7 +67,7 @@ export class QuestionsComponent implements OnInit {
   }
 
   answer(currentQtn: number, choice: any) {
-    if(currentQtn === this.questionList.length - 1){
+    if(currentQtn >= this.questionList.length - 1){
       this.isGameOver = true;
       this.stopCounter();
     }
@@ -82,6 +93,10 @@ export class QuestionsComponent implements OnInit {
         this.counter--;
         if (this.counter === 0) {
           this.currentQuestion++;
+          if(this.currentQuestion >= this.questionList.length - 1){
+            this.isGameOver = true;
+            this.stopCounter();
+          }
           this.counter = this.setCounter;
         }
       });
@@ -104,6 +119,21 @@ export class QuestionsComponent implements OnInit {
   getProgress() {
     this.progress = (100 * this.currentQuestion / this.questionList.length).toString();
     return this.progress;
+  }
+
+   randomArrayShuffle(array:any) {
+    var currentIndex = array.length, temporaryValue, randomIndex;
+    while (0 !== currentIndex) {
+      randomIndex = Math.floor(Math.random() * currentIndex);
+      currentIndex -= 1;
+      temporaryValue = array[currentIndex];
+      array[currentIndex] = array[randomIndex];
+      array[randomIndex] = temporaryValue;
+    }
+    return array;
+  }
+  reload(){
+    window.location.reload();
   }
 
 }

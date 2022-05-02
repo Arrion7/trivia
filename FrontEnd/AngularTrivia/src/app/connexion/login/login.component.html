@@ -3,6 +3,7 @@
     <h4 class="card-header">Login</h4>
     <div class="card-body">
       <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+        
         <div class="form-group">
           <label for="username">Username</label>
           <input type="text" formControlName="username" class="form-control" />
@@ -25,6 +26,11 @@
           </button>
           <a routerLink="../register" class="btn btn-link">Register</a>
         </div>
+        <ng-container *ngIf="submitted" class="invalid-feedback">
+          <div >
+            Something wrong appears. Please check your username and your password.Try again!!! 
+        </div>
+      </ng-container>
       </form>
     </div>
   </div>
