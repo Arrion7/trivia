@@ -13,10 +13,12 @@ import { LoginComponent } from './connexion/login/login.component';
 import { RegisterComponent } from './connexion/register/register.component';
 import { FormsModule} from '@angular/forms';
 import { HomepageComponent } from './homepage/homepage.component';
-//import { LoginComponent } from './login/login.component';
+// import { LoginComponent } from './login/login.component';
 import { GamesComponent } from './games/games.component';
 import { CategoryComponent } from './category/category.component';
+import { DailyQuestionComponent } from './daily-question/daily-question.component';
 import { ReactiveFormsModule } from '@angular/forms';
+
 
 
 @NgModule({
@@ -31,6 +33,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     HomepageComponent,
     GamesComponent,
     CategoryComponent,
+    DailyQuestionComponent
   ],
   imports: [
     BrowserModule,

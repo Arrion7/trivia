@@ -1,0 +1,49 @@
+<div class="container mt-5 d-flex justify-content-between p-3">
+  <div class="card">
+      <div class="d-flex justify-content-between p-3">
+          <div class="image">
+              <img src="../../assets/img/logo.png" alt="logo" width="50">
+          </div>
+          <div class="timer">
+            <h5>{{counter}} sec ⏰</h5>
+          </div>
+          <div class="quiz-header">
+              <h4 style="font-family: cursive;"> Tucker's Trivia Game</h4>
+              <span style="font-style: italic;">Welcome {{name}}</span>
+          </div>
+      </div>
+
+      <ng-container *ngIf="!isGameOver">
+          <div class="question">
+              <div class="card">
+                  <h3>{{questionList[currentQuestion]?.question}}</h3>
+              </div>
+          </div>
+          <div class="options">
+              <ol *ngFor="let choice of questionList[currentQuestion]?.incorrect_answers">
+                  <li (click)="answer(currentQuestion,choice)">
+                      <div class="card">{{choice}}</div>
+                  </li>
+              </ol>
+              <ol >
+                  <li (click)="answer(currentQuestion,questionList[currentQuestion]?.correct_answer)">
+                      <div class="card">{{questionList[currentQuestion]?.correct_answer}}</div>
+                  </li>
+              </ol>
+          </div>
+      </ng-container>
+
+      <ng-container *ngIf="isGameOver">
+          <div class="row d-flex justify-content-between">
+              <div class="result tex-center col-md col-sm-12">
+                  <h2>
+                    {{result}}
+                    <br><br>
+                    {{correctAns}}
+                  </h2>
+              </div>
+          </div>
+      </ng-container>
+  </div>
+
+</div>
