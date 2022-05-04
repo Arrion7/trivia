@@ -1,6 +1,6 @@
 function url()
 {
-    let url = 'https://localhost:7143/api/Item/SearchUser/'
+    let url = 'https://novaflashapplication.azurewebsites.net/'
     return url;
 }
 
@@ -9,6 +9,7 @@ function getUser()
     let user = document.getElementById('username').value;
     let pass = document.getElementById('password').value;
     let fullurl = url();
+    fullurl += "api/Item/SearchUser/";
     fullurl += user;
 
 

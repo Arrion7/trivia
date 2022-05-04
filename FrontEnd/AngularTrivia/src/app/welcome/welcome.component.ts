@@ -8,12 +8,13 @@ import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 export class WelcomeComponent implements OnInit {
 
   @ViewChild('name') nameKey!: ElementRef;
+  public username: string= localStorage.getItem('username')!;
   constructor() { }
 
   ngOnInit(): void {
   }
-  startGame(){
-    localStorage.setItem("name", this.nameKey.nativeElement.value);
-  }
+   startGame(){
+     localStorage.setItem("name", this.nameKey.nativeElement.value);
+   }
 
 }

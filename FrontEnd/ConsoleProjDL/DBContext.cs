@@ -1,6 +1,6 @@
 using Microsoft.EntityFrameworkCore;
-using JAModel;
-namespace JAConsoleDL;
+using Models;
+namespace TriviaDL;
 public class Context : DbContext
 {
     //command: dotnet ef migrations add <name> -c Context --startup-project ../WebAPI
