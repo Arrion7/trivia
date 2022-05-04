@@ -16,5 +16,4 @@ export class WelcomeComponent implements OnInit {
   startGame(){
     localStorage.setItem("name", this.nameKey.nativeElement.value);
   }
-
 }

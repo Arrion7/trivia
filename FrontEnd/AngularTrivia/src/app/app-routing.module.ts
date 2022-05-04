@@ -8,18 +8,18 @@ import { CategoryComponent } from './category/category.component';
 import { GamesComponent } from './games/games.component';
 import { HomepageComponent } from './homepage/homepage.component';
 import { DailyQuestionComponent } from './daily-question/daily-question.component';
+import { AuthService } from './guards/auth.service';
 
 const routes: Routes = [
   {path:"", redirectTo:"login",pathMatch:"full"},
   {path:"login", component:LoginComponent},
   {path:"register", component:RegisterComponent},
-  {path:"welcome", component:WelcomeComponent},
-  {path:"questions", component:QuestionsComponent},
-  {path:"questions", component:QuestionsComponent},
-  {path:"category", component:CategoryComponent},
-  {path:"games", component:GamesComponent},
-  {path:"homepage", component:HomepageComponent},
-  {path:"daily", component:DailyQuestionComponent}
+  {path:"questions", component:QuestionsComponent, canActivate:[AuthService]},
+  {path:"category", component:CategoryComponent, canActivate:[AuthService]},
+  {path:"games", component:GamesComponent, canActivate:[AuthService]},
+  {path:"homepage", component:HomepageComponent, canActivate:[AuthService]},
+  {path:"daily", component:DailyQuestionComponent, canActivate:[AuthService]},
+  {path:"welcome", component:WelcomeComponent, canActivate:[AuthService]}
 ];
 
 @NgModule({

@@ -10,6 +10,7 @@ tmp/
 app/**/*.js
 app/**/*.js.map
 test/
+test2/
 # dependencies
 node_modules/
 bower_components/

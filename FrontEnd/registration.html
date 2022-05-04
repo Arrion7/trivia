@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viwport" content="width=device-width, initial-scale=1.0">
+    <title>Registration</title>
+
+    <script src="registration.js"></script>
+
+</head>
+
+<body onload = "firstfocus();">
+<form name="'registration'">
+    <ul>
+        <li><label for="username">Name [Alphabates characters] :</label></li>
+        <li><input type="text" name="username" size="50" onblur="allLetter()"/></li>
+        <li><label for="password">Password [7 to 12 characters] :</label></li>
+        <li><input type="password" name="password" size="12" onblur="passid_validation(7, 12)"/></li>
+        <li>
+    </ul>
+</form>
+</body>
+</html>
