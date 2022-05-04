@@ -1,4 +1,4 @@
-namespace JAModel;
+namespace Models;
 
 public class DailyQuesion{
 

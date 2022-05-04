@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using JAConsoleBL;
-using JAModel;
+using TriviaBL;
+using Models;
 using Microsoft.Extensions.Caching.Memory;
 
 
@@ -20,10 +20,6 @@ namespace WebAPI.Controllers
 
         
         }
-
-        
-
-
         [HttpGet("GetUsers")]
         public async Task<List<users>> GetAllUsersAsync()
         {
@@ -36,26 +32,13 @@ namespace WebAPI.Controllers
             return await _bl.SearchUsers(username);
         }
 
-
-        [HttpGet("GetAdmins")]
-        public async Task<List<UserPass>> GetAllAdminsAsync()
+        [HttpPost("CreateNewUser/{username}/{password}")]
+        public async Task CreateNewUserAsync(string username, string password)
         {
-            return await _bl.GetAllAdminsAsync();
+            await _bl.CreateNewUserAsync(username, password);
         }
 
 
-
-        [HttpPost("CreateNewUser")]
-        public async Task CreateNewUserAsync(UserPass _tempUser)
-        {
-            await _bl.CreateNewUserAsync(_tempUser);
-        }
-
-        [HttpPost("CreateNewAdmin")]
-        public async Task CreateNewAdminAsync(UserPass _admin)
-        {
-            await _bl.CreateNewAdminAsync(_admin);
-        }
     }
 
     
