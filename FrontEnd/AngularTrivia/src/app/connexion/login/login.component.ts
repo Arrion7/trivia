@@ -10,9 +10,10 @@ import { LoginService } from 'src/app/service/login.service';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
+
   error = false;
   submitted = false;
-  
+
   public loginForm=this.formBuilder.group({
     username:['', Validators.required],
     password:['', Validators.required]
@@ -33,7 +34,7 @@ export class LoginComponent implements OnInit {
       }else{
         this.error = true;
       }
-      
+
 
     });
   }
