@@ -1,0 +1,8 @@
+{
+  "devDependencies": {
+    "@angular/core": "^13.3.5"
+  },
+  "dependencies": {
+    "html-entities": "^2.3.3"
+  }
+}

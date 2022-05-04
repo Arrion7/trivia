@@ -35,7 +35,9 @@ export class QuestionsComponent implements OnInit {
   }
   getAllQuestions() {
     this.questionService.getQuestionJson()
-      .subscribe(res => {
+
+      .subscribe((res: { results: any; }) => {
+        console.log(res);
         this.questionList = decodeEntity(res.results);
         for(let i =0; i < this.questionList.length; i++){
           this.questionList[i].incorrect_answers.push(this.questionList[i].correct_answer);
@@ -59,7 +61,7 @@ export class QuestionsComponent implements OnInit {
     this.progress = this.getProgress();
 
   }
-  reinitialise() {
+  reinitialize() {
     this.currentQuestion = 0;
     this.points = 0;
     this.getAllQuestions();
