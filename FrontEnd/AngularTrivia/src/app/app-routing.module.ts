@@ -12,6 +12,7 @@ const routes: Routes = [
   {path:"register", component:RegisterComponent},
   {path:"welcome", component:WelcomeComponent, canActivate:[AuthService]},
   {path:"questions", component:QuestionsComponent, canActivate:[AuthService]}
+
 ];
 
 @NgModule({
