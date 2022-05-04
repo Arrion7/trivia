@@ -28,7 +28,7 @@ builder.Services.AddSwaggerGen();
 //Scoped, Transient, and Singleton
 //Singleton - for the entire application's lifetime, it shares the one instance
 //Scoped - For every HTTP request, the new instance is spun up
-//Transient - for every time it calls for the class, it spins up a new instance
+//Transient  for every time it calls for the class, it spins up a new instance
 // builder.Services.AddDbContext<Context>(options => options.UseNpgsql(builder.Configuration.GetConnectionString("DBPostgre")));
 builder.Services.AddDbContext<Context>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("DBTrivia")));
 
