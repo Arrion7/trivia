@@ -16,6 +16,7 @@ import { HomepageComponent } from './homepage/homepage.component';
 // import { LoginComponent } from './login/login.component';
 import { GamesComponent } from './games/games.component';
 import { CategoryComponent } from './category/category.component';
+import { DailyQuestionComponent } from './daily-question/daily-question.component';
 
 
 @NgModule({
@@ -29,7 +30,8 @@ import { CategoryComponent } from './category/category.component';
     RegisterComponent,
     HomepageComponent,
     GamesComponent,
-    CategoryComponent
+    CategoryComponent,
+    DailyQuestionComponent
   ],
   imports: [
     BrowserModule,

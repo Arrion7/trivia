@@ -1,14 +1,14 @@
 import { Component, OnInit } from '@angular/core';
-import { DailyService } from '../service/daily.service';
+import { DailyQuestionService } from '../service/daily-question.service';
 import { decodeEntity } from 'html-entities';
 import { interval } from 'rxjs';
 
 @Component({
   selector: 'app-questions',
-  templateUrl: './daily.component.html',
-  styleUrls: ['./daily.component.scss']
+  templateUrl: './daily-question.component.html',
+  styleUrls: ['./daily-question.component.scss']
 })
-export class DailyComponent implements OnInit {
+export class DailyQuestionComponent implements OnInit {
 
   public name: string = "";
   public questionList: any = [];
@@ -20,7 +20,7 @@ export class DailyComponent implements OnInit {
   isGameOver : boolean = false;
   public result: string = "Better luck next time!";
   public correctAns : string = "";
-  constructor(private dailyService: DailyService) { }
+  constructor(private dailyQuestionService: DailyQuestionService) { }
 
   ngOnInit(): void {
     this.name = localStorage.getItem("name")!;
@@ -28,7 +28,7 @@ export class DailyComponent implements OnInit {
     this.startCounter();
   }
   getAllQuestions() {
-    this.dailyService.getQuestionJson()
+    this.dailyQuestionService.getQuestionJson()
       .subscribe(res => {
         this.questionList = decodeEntity(res.results);
       })

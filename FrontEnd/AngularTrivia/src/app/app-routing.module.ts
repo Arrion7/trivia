@@ -7,6 +7,7 @@ import { RegisterComponent } from './connexion/register/register.component';
 import { CategoryComponent } from './category/category.component';
 import { GamesComponent } from './games/games.component';
 import { HomepageComponent } from './homepage/homepage.component';
+import { DailyQuestionComponent } from './daily-question/daily-question.component';
 
 const routes: Routes = [
   {path:"", redirectTo:"login",pathMatch:"full"},
@@ -17,7 +18,8 @@ const routes: Routes = [
   {path:"questions", component:QuestionsComponent},
   {path:"category", component:CategoryComponent},
   {path:"games", component:GamesComponent},
-  {path:"homepage", component:HomepageComponent}
+  {path:"homepage", component:HomepageComponent},
+  {path:"daily", component:DailyQuestionComponent}
 ];
 
 @NgModule({
