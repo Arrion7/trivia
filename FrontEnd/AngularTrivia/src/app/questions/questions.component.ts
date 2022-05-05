@@ -3,6 +3,7 @@ import { QuestionsService } from '../service/questions.service';
 import { decodeEntity } from 'html-entities';
 import { interval } from 'rxjs';
 import { Router } from '@angular/router';
+import { Constants } from '../help/constants';
 
 @Component({
   selector: 'app-questions',
@@ -25,16 +26,18 @@ export class QuestionsComponent implements OnInit {
   progress: string = "0";
   public correctAnswer: number =0;
   isGameOver : boolean = false;
+  public idCategory: string = "0";
   constructor(private questionService: QuestionsService, private router:Router) { }
 
   ngOnInit(): void {
-    this.name = localStorage.getItem("name")!;
-    this.getAllQuestions();
+    this.name = localStorage.getItem(Constants.UserName)!;
+    this.idCategory = localStorage.getItem("idCategory")!;
+    this.getAllQuestions(this.idCategory);
     this.startCounter();
     this.router.routeReuseStrategy.shouldReuseRoute = () => false;
   }
-  getAllQuestions() {
-    this.questionService.getQuestionJson()
+  getAllQuestions(id: any) {
+    this.questionService.getQuestionByCategoryJson(id)
 
       .subscribe((res: { results: any; }) => {
         console.log(res);
@@ -64,7 +67,7 @@ export class QuestionsComponent implements OnInit {
   reinitialize() {
     this.currentQuestion = 0;
     this.points = 0;
-    this.getAllQuestions();
+    this.getAllQuestions(this.idCategory);
     this.resetCounter();
   }
 
