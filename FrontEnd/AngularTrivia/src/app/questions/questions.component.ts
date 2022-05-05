@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { QuestionsService } from '../service/questions.service';
-import { decodeEntity } from 'html-entities';
 import { interval } from 'rxjs';
 import { Router } from '@angular/router';
 import { Constants } from '../help/constants';
+import { SafeHtml, DomSanitizer } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-questions',
@@ -27,7 +27,12 @@ export class QuestionsComponent implements OnInit {
   public correctAnswer: number =0;
   isGameOver : boolean = false;
   public idCategory: string = "0";
-  constructor(private questionService: QuestionsService, private router:Router) { }
+  constructor(private questionService: QuestionsService, private router:Router, private sanitizer: DomSanitizer) { }
+  
+ 
+ public getDecoded(value: any): SafeHtml {
+    return this.sanitizer.bypassSecurityTrustHtml(value);
+ }
 
   ngOnInit(): void {
     this.name = localStorage.getItem(Constants.UserName)!;
@@ -41,13 +46,10 @@ export class QuestionsComponent implements OnInit {
 
       .subscribe((res: { results: any; }) => {
         console.log(res);
-        this.questionList = decodeEntity(res.results);
+        this.questionList = res.results;
         for(let i =0; i < this.questionList.length; i++){
           this.questionList[i].incorrect_answers.push(this.questionList[i].correct_answer);
-          console.log(this.questionList[i].incorrect_answers);
           this.questionListRand[i] = this.randomArrayShuffle(this.questionList[i].incorrect_answers);
-          console.log(this.questionList[i].incorrect_answers);
-          console.log(this.questionList[i].incorrect_answers);
         }
       });
       
