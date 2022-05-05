@@ -32,7 +32,7 @@ export class LoginComponent implements OnInit {
       if(data != null && data.length>0  && data[0].password === password){
         localStorage.setItem("username", username);
         localStorage.setItem("idCategory", "0");
-        this.router.navigate(["../welcome"]);
+        this.router.navigate(["../games"]);
       }else{
         this.error = true;
       }
