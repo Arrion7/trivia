@@ -1,44 +1,27 @@
+using System.ComponentModel.DataAnnotations;
 namespace Models;
 
-public class DailyQuesion{
+public class DailyQuestion
+{
 
-    private string category;
-    private bool questionType;
-    private string difficulty;
-    private string question;
-    private string answer;
-    private List<string> incorrect = new List<string>();
+    private int id;
+    private string question = "";
+    private string ans = "";
+    private string notAns1 = "";
+    private string notAns2 = "";
+    private string notAns3 = "";
 
     //-----------------------------------------------------------------------
 
-    public string Category {
-        get => category;
+    [Key]
+    public int Id {
+        get => id;
         
         set 
-        {
-            category = value;
-        }
+        { 
+            id = value; 
+        } 
     }
-
-    public bool QuestionType {
-        get => questionType;
-        
-        set 
-        {
-            questionType = value;
-        }
-    }
-
-    public string Difficulty {
-        get => difficulty;
-        
-        set 
-        {
-            difficulty = value;
-        }
-    }
-
-
 
     public string Question {
         get => question;
@@ -49,21 +32,39 @@ public class DailyQuesion{
         }
     }
 
-    public string Answer {
-        get => answer;
+    public string Ans {
+        get => ans;
 
         set 
         {
-            answer = value;
+            ans = value;
         }
     }
 
-    public List<string> Incorrect {
-        get => incorrect;
+    public string NotAns1 {
+        get => notAns1;
 
         set
         {
-            incorrect = value;
+            notAns1 = value;
+        }
+    }
+
+    public string NotAns2 {
+        get => notAns2;
+
+        set
+        {
+            notAns2 = value;
+        }
+    }
+
+    public string NotAns3 {
+        get => notAns3;
+
+        set
+        {
+            notAns3 = value;
         }
     }
 

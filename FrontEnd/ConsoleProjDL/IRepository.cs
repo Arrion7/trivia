@@ -7,6 +7,7 @@ public interface IRepo
     Task CreateNewUserAsync(string username, string password);
     Task<List<users>> GetAllUsersAsync();
     Task<List<users>> SearchUsers(string username);
+    Task<List<DailyQuestion>> GetDailyQuestionAsync();
 
 }
 

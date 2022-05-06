@@ -38,6 +38,12 @@ namespace WebAPI.Controllers
             await _bl.CreateNewUserAsync(username, password);
         }
 
+        [HttpGet("DailyQuestion")]
+        public async Task<List<DailyQuestion>> GetDailyQuestionAsync()
+        {
+            return await _bl.GetDailyQuestionAsync();
+        }
+
 
     }
 

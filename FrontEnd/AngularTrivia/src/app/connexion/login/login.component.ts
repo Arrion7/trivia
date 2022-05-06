@@ -13,6 +13,7 @@ export class LoginComponent implements OnInit {
 
   error = false;
   submitted = false;
+  idCategory = 0;
 
   public getCredentials(name: string, pass: string)
   {
@@ -42,10 +43,10 @@ export class LoginComponent implements OnInit {
       
       else
       {
-        this.error = true;
+
+        localStorage.setItem("idCategory", "0");
+        this.router.navigate(["../games"]);
       }
-
-
     });
   }
 

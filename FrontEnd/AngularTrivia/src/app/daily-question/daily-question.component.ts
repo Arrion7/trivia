@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { DailyQuestionService } from '../service/daily-question.service';
-import { decodeEntity } from 'html-entities';
 import { interval } from 'rxjs';
+import { SafeHtml, DomSanitizer } from '@angular/platform-browser';
+import { decodeEntity } from 'html-entities';
 
 @Component({
   selector: 'app-questions',
@@ -12,6 +13,7 @@ export class DailyQuestionComponent implements OnInit {
 
   public name: string = "";
   public questionList: any = [];
+  public questionListRand: any = [];
   public currentQuestion: number = 0;
   private setCounter: number = 30;
   counter = this.setCounter;
@@ -20,7 +22,7 @@ export class DailyQuestionComponent implements OnInit {
   isGameOver : boolean = false;
   public result: string = "Better luck next time!";
   public correctAns : string = "";
-  constructor(private dailyQuestionService: DailyQuestionService) { }
+  constructor(private dailyQuestionService: DailyQuestionService, private sanitizer: DomSanitizer) { }
 
   ngOnInit(): void {
     this.name = localStorage.getItem("name")!;
@@ -31,9 +33,14 @@ export class DailyQuestionComponent implements OnInit {
     this.dailyQuestionService.getQuestionJson()
       .subscribe(res => {
         this.questionList = decodeEntity(res.results);
+        this.questionList[0].incorrect_answers.push(this.questionList[0].correct_answer);
+        this.questionListRand[0] = this.randomArrayShuffle(this.questionList[0].incorrect_answers);
       })
   }
 
+  public getDecoded(value: any): SafeHtml {
+    return this.sanitizer.bypassSecurityTrustHtml(value);
+ }
   answer(currentQtn: number, choice: any) {
     if(currentQtn === this.questionList.length - 1){
       this.isGameOver = true;
@@ -65,6 +72,18 @@ export class DailyQuestionComponent implements OnInit {
     this.intervals.unsubscribe();
     this.counter = 0;
 
+  }
+
+  randomArrayShuffle(array:any) {
+    var currentIndex = array.length, temporaryValue, randomIndex;
+    while (0 !== currentIndex) {
+      randomIndex = Math.floor(Math.random() * currentIndex);
+      currentIndex -= 1;
+      temporaryValue = array[currentIndex];
+      array[currentIndex] = array[randomIndex];
+      array[randomIndex] = temporaryValue;
+    }
+    return array;
   }
 
 }
