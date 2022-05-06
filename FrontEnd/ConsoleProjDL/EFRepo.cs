@@ -38,4 +38,9 @@ public class EFRepo : IRepo
         throw new NotImplementedException();
     }
 
+    public async Task<List<DailyQuestion>> GetDailyQuestionAsync()
+    {
+        return await _context.DailyQuestions.ToListAsync();
+    }
+
 } 

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { DailyQuestionService } from '../service/daily-question.service';
 import { interval } from 'rxjs';
 import { SafeHtml, DomSanitizer } from '@angular/platform-browser';
+import { decodeEntity } from 'html-entities';
 
 @Component({
   selector: 'app-questions',
@@ -12,6 +13,7 @@ export class DailyQuestionComponent implements OnInit {
 
   public name: string = "";
   public questionList: any = [];
+  public questionListRand: any = [];
   public currentQuestion: number = 0;
   private setCounter: number = 30;
   counter = this.setCounter;
@@ -30,7 +32,9 @@ export class DailyQuestionComponent implements OnInit {
   getAllQuestions() {
     this.dailyQuestionService.getQuestionJson()
       .subscribe(res => {
-        this.questionList = res.results;
+        this.questionList = decodeEntity(res.results);
+        this.questionList[0].incorrect_answers.push(this.questionList[0].correct_answer);
+        this.questionListRand[0] = this.randomArrayShuffle(this.questionList[0].incorrect_answers);
       })
   }
 
@@ -68,6 +72,18 @@ export class DailyQuestionComponent implements OnInit {
     this.intervals.unsubscribe();
     this.counter = 0;
 
+  }
+
+  randomArrayShuffle(array:any) {
+    var currentIndex = array.length, temporaryValue, randomIndex;
+    while (0 !== currentIndex) {
+      randomIndex = Math.floor(Math.random() * currentIndex);
+      currentIndex -= 1;
+      temporaryValue = array[currentIndex];
+      array[currentIndex] = array[randomIndex];
+      array[randomIndex] = temporaryValue;
+    }
+    return array;
   }
 
 }

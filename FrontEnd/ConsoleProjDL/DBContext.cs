@@ -10,6 +10,9 @@ public class Context : DbContext
     public Context(DbContextOptions options) : base(options){ }
 
     public DbSet<users> users {get; set;}
+
+    public DbSet<DailyQuestion> DailyQuestions {get; set;}
+    
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         modelBuilder.Entity<users>().Property(i => i.userid).ValueGeneratedOnAdd();

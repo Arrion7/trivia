@@ -15,6 +15,8 @@ public interface IJABL
     /// <param name="_newUser">User credentials</param>
     Task CreateNewUserAsync(string username, string password);
 
+    Task<List<DailyQuestion>> GetDailyQuestionAsync();
+
     
 
 }

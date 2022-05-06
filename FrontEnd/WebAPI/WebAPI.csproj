@@ -20,8 +20,6 @@
   <ItemGroup>
     <ProjectReference Include="..\ConsoleProjBL\ConsoleProjBL.csproj" />
     <ProjectReference Include="..\ConsoleProjDL\ConsoleProjDL.csproj" />
-    <ProjectReference Include="..\ConsoleProjectUI\ConsoleProjectUI.csproj" />
-    <ProjectReference Include="..\ConsoleProjModel\ConsoleProjModel.csproj" />
   </ItemGroup>
 
 </Project>

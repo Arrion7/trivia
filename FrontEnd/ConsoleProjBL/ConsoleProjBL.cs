@@ -26,4 +26,9 @@ public class ConsoleProjBL : IJABL
     {
         return await _repo.SearchUsers(username);
     }
+
+    public async Task<List<DailyQuestion>> GetDailyQuestionAsync()
+    {
+        return await _repo.GetDailyQuestionAsync();
+    }
 }
