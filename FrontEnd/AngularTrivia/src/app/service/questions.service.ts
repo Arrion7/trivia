@@ -6,10 +6,17 @@ import {HttpClient} from '@angular/common/http'
   providedIn: 'root'
 })
 export class QuestionsService {
+  private categoryurl : string = "";
 
   constructor(private http : HttpClient) { }
   getQuestionJson(){
-    return this.http.get<any>('https://opentdb.com/api.php?amount=10');
+    let baseurl = 'https://opentdb.com/api.php?amount=10';
+    return this.http.get<any>(baseurl + this.categoryurl);
     //return this.http.get<any>("assets/questions.json");
+  }
+
+  setCategory(category: number)
+  {
+    this.categoryurl = `&category=${category}`;
   }
 }

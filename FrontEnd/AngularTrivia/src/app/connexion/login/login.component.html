@@ -24,13 +24,14 @@
             <span  *ngIf="loginForm.valid" class="spinner-border spinner-border-sm mr-1"></span>
             Login
           </button>
-          <a routerLink="../register" class="btn btn-link">Register</a>
+          <a routerLink="../register" class="btn btn-link"  >Register</a>
         </div>
         <ng-container *ngIf="submitted" class="invalid-feedback">
           <div >
             Something wrong appears. Please check your username and your password.Try again!!! 
         </div>
       </ng-container>
+        
       </form>
     </div>
   </div>

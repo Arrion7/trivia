@@ -14,7 +14,12 @@ export class LoginComponent implements OnInit {
   error = false;
   submitted = false;
 
-  public loginForm=this.formBuilder.group({
+  public getCredentials(name: string, pass: string)
+  {
+    let form = this.loginForm;
+  }
+
+  public loginForm = this.formBuilder.group({
     username:['', Validators.required],
     password:['', Validators.required]
   })
@@ -23,19 +28,26 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
   }
 
+
   onSubmit(){
     let username  = this.loginForm.controls["username"].value;
     let password  = this.loginForm.controls["password"].value;
     this.submitted = true;
     this.loginService.getByUsername(username).subscribe((data: any)=>{
-      if(data != null && data.length>0  && data[0].password === password){
+      if(data != null && data.length>0  && data[0].password === password)
+      {
         localStorage.setItem("username", username);
         this.router.navigate(["../welcome"]);
-      }else{
+      }
+      
+      else
+      {
         this.error = true;
       }
 
 
     });
   }
+
+
 }

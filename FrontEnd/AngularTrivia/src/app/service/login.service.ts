@@ -51,7 +51,6 @@ export class LoginService {
 
     getByUsername(username: string) {
         return this.http.get<any>(`${environment.apiBaseURL}/Item/SearchUser/${username}`);
-      ;
     }
 
 }
