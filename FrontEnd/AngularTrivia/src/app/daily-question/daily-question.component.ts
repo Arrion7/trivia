@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { DailyQuestionService } from '../service/daily-question.service';
-import { decodeEntity } from 'html-entities';
 import { interval } from 'rxjs';
+import { SafeHtml, DomSanitizer } from '@angular/platform-browser';
+import { decodeEntity } from 'html-entities';
 
 @Component({
   selector: 'app-questions',
@@ -21,7 +22,7 @@ export class DailyQuestionComponent implements OnInit {
   isGameOver : boolean = false;
   public result: string = "Better luck next time!";
   public correctAns : string = "";
-  constructor(private dailyQuestionService: DailyQuestionService) { }
+  constructor(private dailyQuestionService: DailyQuestionService, private sanitizer: DomSanitizer) { }
 
   ngOnInit(): void {
     this.name = localStorage.getItem("name")!;
@@ -37,6 +38,9 @@ export class DailyQuestionComponent implements OnInit {
       })
   }
 
+  public getDecoded(value: any): SafeHtml {
+    return this.sanitizer.bypassSecurityTrustHtml(value);
+ }
   answer(currentQtn: number, choice: any) {
     if(currentQtn === this.questionList.length - 1){
       this.isGameOver = true;

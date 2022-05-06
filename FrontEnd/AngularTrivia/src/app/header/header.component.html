@@ -26,10 +26,17 @@
             </ul>
           </li>
         </ul>
-        <form class="d-flex" routerLink="/login">
-          <!--<input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">-->
-          <button style="color: darkgreen;">Sign In</button>
-        </form>
+        <ul class="nav justify-content-end">
+          <li class="nav-item">
+            <button *ngIf="!isUserConnected" button type="button" class="btn btn-primary"> <a class="nav-link active text-reset" aria-current="page"   routerLink="../login">Sign In</a></button>
+          </li>
+          <li class="nav-item">
+            <button *ngIf="!isUserConnected" button type="button" class="btn btn-primary"><a class="nav-link text-reset"   routerLink="../register">Register</a></button>
+          </li>
+          <li class="nav-item">
+            <button *ngIf="isUserConnected" button type="button" class="btn btn-primary"><a class="nav-link text-reset"  routerLink="../login" (click)="onLogout()">Logout</a></button>
+          </li>
+        </ul>
       </div>
     </div>
   </nav>

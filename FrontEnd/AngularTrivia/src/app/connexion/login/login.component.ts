@@ -13,6 +13,7 @@ export class LoginComponent implements OnInit {
 
   error = false;
   submitted = false;
+  idCategory = 0;
 
   public loginForm=this.formBuilder.group({
     username:['', Validators.required],
@@ -30,7 +31,8 @@ export class LoginComponent implements OnInit {
     this.loginService.getByUsername(username).subscribe((data: any)=>{
       if(data != null && data.length>0  && data[0].password === password){
         localStorage.setItem("username", username);
-        this.router.navigate(["../welcome"]);
+        localStorage.setItem("idCategory", "0");
+        this.router.navigate(["../games"]);
       }else{
         this.error = true;
       }

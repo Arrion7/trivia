@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { QuestionsService } from '../service/questions.service';
-import { decodeEntity } from 'html-entities';
 import { interval } from 'rxjs';
 import { Router } from '@angular/router';
+import { Constants } from '../help/constants';
+import { SafeHtml, DomSanitizer } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-questions',
@@ -25,26 +26,30 @@ export class QuestionsComponent implements OnInit {
   progress: string = "0";
   public correctAnswer: number =0;
   isGameOver : boolean = false;
-  constructor(private questionService: QuestionsService, private router:Router) { }
+  public idCategory: string = "0";
+  constructor(private questionService: QuestionsService, private router:Router, private sanitizer: DomSanitizer) { }
+  
+ 
+ public getDecoded(value: any): SafeHtml {
+    return this.sanitizer.bypassSecurityTrustHtml(value);
+ }
 
   ngOnInit(): void {
-    this.name = localStorage.getItem("name")!;
-    this.getAllQuestions();
+    this.name = localStorage.getItem(Constants.UserName)!;
+    this.idCategory = localStorage.getItem("idCategory")!;
+    this.getAllQuestions(this.idCategory);
     this.startCounter();
     this.router.routeReuseStrategy.shouldReuseRoute = () => false;
   }
-  getAllQuestions() {
-    this.questionService.getQuestionJson()
+  getAllQuestions(id: any) {
+    this.questionService.getQuestionByCategoryJson(id)
 
       .subscribe((res: { results: any; }) => {
         console.log(res);
-        this.questionList = decodeEntity(res.results);
+        this.questionList = res.results;
         for(let i =0; i < this.questionList.length; i++){
           this.questionList[i].incorrect_answers.push(this.questionList[i].correct_answer);
-          console.log(this.questionList[i].incorrect_answers);
           this.questionListRand[i] = this.randomArrayShuffle(this.questionList[i].incorrect_answers);
-          console.log(this.questionList[i].incorrect_answers);
-          console.log(this.questionList[i].incorrect_answers);
         }
       });
       
@@ -64,7 +69,7 @@ export class QuestionsComponent implements OnInit {
   reinitialize() {
     this.currentQuestion = 0;
     this.points = 0;
-    this.getAllQuestions();
+    this.getAllQuestions(this.idCategory);
     this.resetCounter();
   }
 

@@ -16,7 +16,7 @@
       <ng-container *ngIf="!isGameOver">
           <div class="question">
               <div class="card">
-                  <h3>{{questionList[currentQuestion]?.question}}</h3>
+                  <h3><div [innerHTML]="getDecoded(questionList[currentQuestion]?.question)"></div></h3>
               </div>
           </div>
           <div class="options">
