@@ -12,6 +12,7 @@ export class DailyQuestionComponent implements OnInit {
 
   public name: string = "";
   public questionList: any = [];
+  public questionListRand: any = [];
   public currentQuestion: number = 0;
   private setCounter: number = 30;
   counter = this.setCounter;
@@ -31,6 +32,8 @@ export class DailyQuestionComponent implements OnInit {
     this.dailyQuestionService.getQuestionJson()
       .subscribe(res => {
         this.questionList = decodeEntity(res.results);
+        this.questionList[0].incorrect_answers.push(this.questionList[0].correct_answer);
+        this.questionListRand[0] = this.randomArrayShuffle(this.questionList[0].incorrect_answers);
       })
   }
 
@@ -65,6 +68,18 @@ export class DailyQuestionComponent implements OnInit {
     this.intervals.unsubscribe();
     this.counter = 0;
 
+  }
+
+  randomArrayShuffle(array:any) {
+    var currentIndex = array.length, temporaryValue, randomIndex;
+    while (0 !== currentIndex) {
+      randomIndex = Math.floor(Math.random() * currentIndex);
+      currentIndex -= 1;
+      temporaryValue = array[currentIndex];
+      array[currentIndex] = array[randomIndex];
+      array[randomIndex] = temporaryValue;
+    }
+    return array;
   }
 
 }
