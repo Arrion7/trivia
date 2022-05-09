@@ -2,12 +2,13 @@
 using TriviaBL;
 using Models;
 using Microsoft.Extensions.Caching.Memory;
-
+using System.Web.Http.Cors;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
 namespace WebAPI.Controllers
 {
+    [EnableCors("http://localhost:4200/", "*", "*")]
     [Route("api/[controller]")]
     [ApiController]
     public class ItemController : ControllerBase
@@ -20,6 +21,7 @@ namespace WebAPI.Controllers
 
         
         }
+        
         [HttpGet("GetUsers")]
         public async Task<List<users>> GetAllUsersAsync()
         {
@@ -31,6 +33,7 @@ namespace WebAPI.Controllers
         {
             return await _bl.SearchUsers(username);
         }
+
 
         [HttpPost("CreateNewUser/{username}/{password}")]
         public async Task CreateNewUserAsync(string username, string password)
