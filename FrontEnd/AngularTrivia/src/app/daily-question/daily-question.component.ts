@@ -3,6 +3,7 @@ import { DailyQuestionService } from '../service/daily-question.service';
 import { interval } from 'rxjs';
 import { SafeHtml, DomSanitizer } from '@angular/platform-browser';
 import { decodeEntity } from 'html-entities';
+import { Daily } from '../models/Daily';
 
 @Component({
   selector: 'app-questions',
@@ -15,6 +16,7 @@ export class DailyQuestionComponent implements OnInit {
   public questionList: any = [];
   public questionListRand: any = [];
   public currentQuestion: number = 0;
+  public dailyQuest!: Daily;
   private setCounter: number = 30;
   counter = this.setCounter;
   public intervals: any;
@@ -28,9 +30,10 @@ export class DailyQuestionComponent implements OnInit {
     this.name = localStorage.getItem("name")!;
     this.getAllQuestions();
     this.startCounter();
+    this.getQuestionNew();
   }
   getAllQuestions() {
-    this.dailyQuestionService.getQuestionJson()
+    this.dailyQuestionService.getDaily()
       .subscribe(res => {
         this.questionList = decodeEntity(res.results);
         this.questionList[0].incorrect_answers.push(this.questionList[0].correct_answer);
@@ -38,9 +41,24 @@ export class DailyQuestionComponent implements OnInit {
       })
   }
 
+  getQuestionNew() {
+    this.dailyQuestionService.getDaily().subscribe((data: Daily[]) => {
+      console.log(`${data[0].Question}`);
+      console.log(`${data[0].Ans}`);
+      this.dailyQuest.Question = data[0].Question;
+      this.dailyQuest.Ans = data[0].Ans;
+      this.dailyQuest.NotAns1 = data[0].NotAns1;
+      this.dailyQuest.NotAns2 = data[0].NotAns3;
+      this.dailyQuest.NotAns3 = data[0].NotAns3;
+      this.questionListRand[0].push(this.dailyQuest.Ans, this.dailyQuest.NotAns1, this.dailyQuest.NotAns2, this.dailyQuest.NotAns3,);
+      this.questionListRand[0] = this.randomArrayShuffle(this.questionListRand[0]);
+      console.log(`${this.dailyQuest.Question}`);
+    })
+  }
+
   public getDecoded(value: any): SafeHtml {
     return this.sanitizer.bypassSecurityTrustHtml(value);
- }
+  }
   answer(currentQtn: number, choice: any) {
     if(currentQtn === this.questionList.length - 1){
       this.isGameOver = true;
