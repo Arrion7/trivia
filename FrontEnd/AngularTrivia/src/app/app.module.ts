@@ -18,6 +18,8 @@ import { GamesComponent } from './games/games.component';
 import { CategoryComponent } from './category/category.component';
 import { DailyQuestionComponent } from './daily-question/daily-question.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { XyzComponent } from './xyz/xyz.component';
+import { UserStatisticsComponent } from './user-statistics/user-statistics.component';
 
 
 
@@ -33,7 +35,9 @@ import { ReactiveFormsModule } from '@angular/forms';
     HomepageComponent,
     GamesComponent,
     CategoryComponent,
-    DailyQuestionComponent
+    DailyQuestionComponent,
+    XyzComponent,
+    UserStatisticsComponent
   ],
   imports: [
     BrowserModule,
